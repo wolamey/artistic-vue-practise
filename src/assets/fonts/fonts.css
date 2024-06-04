@@ -1,0 +1,21 @@
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Montserrat'), url('./Montserrat-Regular.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'lato';
+    font-style: normal;
+    font-weight: normal;
+    src: local('lato'), url('./fonts/Lato-Regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'garamond';
+    font-style: normal;
+    font-weight: normal;
+    src: local('garamond'), url('./CormorantGaramond-Regular.woff') format('woff');
+}

@@ -98,7 +98,7 @@ export default {
     text-align: left;
     color: #FFFFFF;
     margin: 1px 0 0 0;
-    text-wrap: nowrap
+    text-wrap: nowrap;
 }
 
 .header__route,
@@ -154,6 +154,6 @@ export default {
     text-align: left !important;
     color: #FFFFFF !important;
     text-decoration: none !important;
-    text-wrap: nowrap
+    text-wrap: nowrap;
 }
 </style>

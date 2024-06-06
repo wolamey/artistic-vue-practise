@@ -72,7 +72,7 @@
             </div>
 
 
-            <a href="contact.html" className="why-us__link">
+            <a href="" className="why-us__link">
                 <p className="why-us__link-text">Оставить заявку</p>
                 <img src="../../assets/img/arrow.webp" className="why-us__arrow-img" alt="">
             </a>
@@ -297,15 +297,15 @@
 
                         </div>
 
-                        <div className="portfolio__video">
+                        <div @click="setVideo('https://www.youtube.com/embed/WNgdiARySmY?si=a1jNcAYyYk4_Z-0R',true)"  className="portfolio__video">
                             <img src="../../assets/img/watch1.webp" className="portfolio__video-back" alt="">
-                            <a href="about.html" className="portfolio__item-link">
+                            <a href="#" className="portfolio__item-link">
                                 <img src="../../assets/img/playvideo.webp" className="portfolio__play-video" alt="">
                                 <p className="portfolio__link-text">Смотреть видео</p>
                             </a>
                         </div>
 
-                        <a href="contact.html" className="button portfolio__button"> Подробнее</a>
+                        <a href="" className="button portfolio__button"> Подробнее</a>
                     </div>
                 </div>
 
@@ -361,15 +361,15 @@
 
                         </div>
 
-                        <div className="portfolio__video">
+                        <div  @click="setVideo('https://www.youtube.com/embed/ZYzaDxIw1sI?si=gpDoatVwgHl0oMxu',true)"  className="portfolio__video">
                             <img src="../../assets/img/watch1.webp" className="portfolio__video-back" alt="">
-                            <a href="about.html" className="portfolio__item-link">
+                            <a href="#" className="portfolio__item-link">
                                 <img src="../../assets/img/playvideo.webp" className="portfolio__play-video" alt="">
                                 <p className="portfolio__link-text">Смотреть видео</p>
                             </a>
                         </div>
 
-                        <a href="contact.html" className="button portfolio__button"> Подробнее</a>
+                        <a href="" className="button portfolio__button"> Подробнее</a>
                     </div>
                 </div>
 
@@ -424,15 +424,15 @@
 
                         </div>
 
-                        <div className="portfolio__video">
+                        <div  @click="setVideo('https://www.youtube.com/embed/_nDCLhRUojE?si=mcZ9kUpSGB3pNr67',true)"  className="portfolio__video">
                             <img src="../../assets/img/watch1.webp" className="portfolio__video-back" alt="">
-                            <a href="about.html" className="portfolio__item-link">
+                            <a href="#" className="portfolio__item-link">
                                 <img src="../../assets/img/playvideo.webp" className="portfolio__play-video" alt="">
                                 <p className="portfolio__link-text">Смотреть видео</p>
                             </a>
                         </div>
 
-                        <a href="contact.html" className="button portfolio__button"> Подробнее</a>
+                        <a href="" className="button portfolio__button"> Подробнее</a>
                     </div>
                 </div>
 
@@ -487,15 +487,15 @@
 
                         </div>
 
-                        <div className="portfolio__video">
+                        <div  @click="setVideo('https://www.youtube.com/embed/SOnbnDgvH84?si=Eib5YmSq8PAkAMYn',true)"  className="portfolio__video">
                             <img src="../../assets/img/watch1.webp" className="portfolio__video-back" alt="">
-                            <a href="about.html" className="portfolio__item-link">
+                            <a href="#" className="portfolio__item-link">
                                 <img src="../../assets/img/playvideo.webp" className="portfolio__play-video" alt="">
                                 <p className="portfolio__link-text">Смотреть видео</p>
                             </a>
                         </div>
 
-                        <a href="contact.html" className="button portfolio__button"> Подробнее</a>
+                        <a href="" className="button portfolio__button"> Подробнее</a>
                     </div>
                 </div>
 
@@ -550,15 +550,15 @@
 
                         </div>
 
-                        <div className="portfolio__video">
+                        <div  @click="setVideo('https://www.youtube.com/embed/q0PXMFtsScU?si=gFV4rGMY1ep1Qp39',true)"  className="portfolio__video">
                             <img src="../../assets/img/watch1.webp" className="portfolio__video-back" alt="">
-                            <a href="about.html" className="portfolio__item-link">
+                            <a href="#" className="portfolio__item-link">
                                 <img src="../../assets/img/playvideo.webp" className="portfolio__play-video" alt="">
                                 <p className="portfolio__link-text">Смотреть видео</p>
                             </a>
                         </div>
 
-                        <a href="contact.html" className="button portfolio__button"> Подробнее</a>
+                        <a href="" className="button portfolio__button"> Подробнее</a>
                     </div>
                 </div>
 
@@ -613,15 +613,15 @@
 
                         </div>
 
-                        <div className="portfolio__video">
+                        <div  @click="setVideo('https://www.youtube.com/embed/dTrbg8l8Xfs?si=2thTfueDgSUG817S',true)"  className="portfolio__video">
                             <img src="../../assets/img/watch1.webp" className="portfolio__video-back" alt="">
-                            <a href="about.html" className="portfolio__item-link">
+                            <a href="#" className="portfolio__item-link">
                                 <img src="../../assets/img/playvideo.webp" className="portfolio__play-video" alt="">
                                 <p className="portfolio__link-text">Смотреть видео</p>
                             </a>
                         </div>
 
-                        <a href="contact.html" className="button portfolio__button"> Подробнее</a>
+                        <a href="" className="button portfolio__button"> Подробнее</a>
                     </div>
                 </div>
 
@@ -651,6 +651,21 @@ import Calculator from '../../components/Calculator.vue'
 export default {
     components: {
         Calculator,
+    },
+    props:{
+        videoSrc:{
+            type: String,
+            required: true
+        },
+        isVideoPlaying:{
+            type: Boolean,
+            required:true,
+
+        },
+        setVideo:{
+            type: Function,
+            required: true
+        }
     }
 
 }
@@ -816,6 +831,7 @@ export default {
     align-items: center;
     margin: 30px 0 0 0;
     text-decoration: none;
+    width: fit-content;
 
 }
 
@@ -889,6 +905,12 @@ export default {
   flex-direction: column;
   align-items: end;
   gap: 15px;
+}
+
+.count-form__submit{
+    width: 100%;
+    max-width: 300px;
+    border-radius: 16px;
 }
 .count-form__pre-input {
   font-family: "lato", sans-serif;
@@ -1167,13 +1189,19 @@ export default {
 .portfolio__video {
   position: relative;
   display: grid;
+  cursor: pointer;
+}
+.portfolio__video:hover .portfolio__item-link{
+    scale: 1.1;
 }
 
 .portfolio__video-back {
+
   width: 100%;
 }
 
 .portfolio__item-link {
+    transition: 0.3s;
   display: flex;
   gap: 10px;
   align-items: center;
@@ -1181,6 +1209,7 @@ export default {
   position: absolute;
   align-self: center;
   justify-self: center;
+  pointer-events: none
 }
 
 .portfolio__link-text {

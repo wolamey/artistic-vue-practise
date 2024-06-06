@@ -12,12 +12,12 @@
             </div>
 
             <div className="header__links">
-                <router-link className="header__route" to="/">Home</router-link>
-                <router-link className="header__route" to="/prices">Prices</router-link>
-                <router-link className="header__route" to="/calculator">Calculator</router-link>
-                <router-link className="header__route" to="/examples">Examples</router-link>
-                <router-link className="header__route" to="/news">News</router-link>
-                <router-link className="header__route" to="/testimonails">Testimonails</router-link>
+                <router-link className="header__route" to="/">Главная</router-link>
+                <router-link className="header__route" to="/prices">Цены</router-link>
+                <router-link className="header__route" to="/calculator">Калькулятор ремонта</router-link>
+                <router-link className="header__route" to="/examples">Примеры работ</router-link>
+                <router-link className="header__route" to="/news">Новости</router-link>
+                <router-link className="header__route" to="/testimonails">Отзывы</router-link>
                 <a className="header__tel" href="tel:+89500191919">+8(950) 019 - 19 - 19</a>
             </div>
         </div>

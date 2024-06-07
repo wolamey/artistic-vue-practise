@@ -3,13 +3,15 @@
     <header className="header">
 
         <div className="header__container">
-            <div className="header__logo">
+            <router-link className=" header__logo" to="/">
+                <!-- <div className="header__logo"> -->
                 <img :src="logo" alt="logo" className="header__logo-img">
                 <div className="header__logo-text">
                     <p className="header__logo-name">artistic</p>
                     <p className="header__logo-description">Ремонт ванных комнат</p>
                 </div>
-            </div>
+            </router-link>
+            <!-- </div> -->
 
             <div className="header__links">
                 <router-link className="header__route" to="/">Главная</router-link>
@@ -20,6 +22,26 @@
                 <router-link className="header__route" to="/testimonails">Отзывы</router-link>
                 <a className="header__tel" href="tel:+89500191919">+8(950) 019 - 19 - 19</a>
             </div>
+
+            <div className="header__mobile">
+                <a className="header__tel" href="tel:+89500191919">+8(950) 019 - 19 - 19</a>
+                <button @click="setBurgerStatus(true)" className="header__burger-button">
+                    <img src="./../assets/img/burger-menu.png" className="header__burger-img" alt="">
+                </button>
+            </div>
+        </div>
+
+
+        <div class="header__burger-open" v-if="isBurgerOpen">
+            <button  @click="setBurgerStatus(false)"  className="header__burger-close-button"><img src="./../assets/img/burger-close.png"
+                    className="header__burger-close-button-img" alt=""></button>
+
+            <router-link @click="setBurgerStatus(false)" className="header__route" to="/">Главная</router-link>
+            <router-link @click="setBurgerStatus(false)" className="header__route" to="/prices">Цены</router-link>
+            <router-link @click="setBurgerStatus(false)" className="header__route" to="/calculator">Калькулятор ремонта</router-link>
+            <router-link @click="setBurgerStatus(false)" className="header__route" to="/examples">Примеры работ</router-link>
+            <router-link @click="setBurgerStatus(false)" className="header__route" to="/news">Новости</router-link>
+            <router-link @click="setBurgerStatus(false)" className="header__route" to="/testimonails">Отзывы</router-link>
         </div>
 
     </header>
@@ -39,7 +61,14 @@ export default {
     data() {
         return {
             logo: logoImg,
+            isBurgerOpen: false
         };
+    },
+    methods:{
+        setBurgerStatus(status){
+            this.isBurgerOpen= status;
+            return;
+        }
     }
 }
 </script>
@@ -55,9 +84,10 @@ export default {
 @import "./../assets/fonts/fonts.css";
 
 .header {
-    
+
     background: #D0B194E5;
-    padding: 22px 0
+    padding: 22px 0;
+    position: relative;
 }
 
 .header__container {
@@ -113,6 +143,13 @@ export default {
 
 }
 
+.header__container a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
 
 .header__links {
     display: flex;
@@ -155,5 +192,78 @@ export default {
     color: #FFFFFF !important;
     text-decoration: none !important;
     text-wrap: nowrap;
+}
+
+.header__mobile {
+    display: none;
+}
+.header__burger-button {
+        background: none;
+        border: none;
+        outline: none;
+    }
+
+.header__burger-open{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    height: 100vh;
+    background: #CBB097E8;
+    padding: 33px 15px 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 23px;
+
+}
+.header__burger-close-button{
+    background: none;
+        border: none;
+        outline: none;
+}
+
+@media(max-width: 769px) {
+
+
+    .header__logo-img {
+        max-width: 30px;
+    }
+
+    .header__logo-name {
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 12.71px;
+        letter-spacing: 0.085em;
+
+
+    }
+
+    .header__logo-description {
+        font-size: 8px;
+        font-weight: 500;
+        line-height: 9.75px;
+        letter-spacing: -0.04em;
+
+    }
+
+    .header__links {
+        display: none;
+    }
+
+    .header__mobile {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+    }
+
+
+
+    .header__tel {
+        font-size: 12px !important;
+        font-weight: 700 !important;
+        line-height: 14.63px !important;
+        letter-spacing: -0.005em !important;
+
+    }
 }
 </style>

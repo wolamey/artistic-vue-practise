@@ -102,7 +102,7 @@
 
       <div className="calculator__services-wrapper">
         <label className="calculator__services-item">Подвесной унитаз (инсталляция)
-          <input type="checkbox" className="calculator__services-check-box" >
+          <input type="checkbox" className="calculator__services-check-box">
           <span className="calculator__services-checkmark"></span>
         </label>
         <label className="calculator__services-item">Душевая кабина
@@ -147,7 +147,7 @@
 
         <form action="" className="calculator__form">
           <input required className="calculator__form-input" type="text" placeholder="Ваше имя     ">
-          <input required className="calculator__form-input"  type="tel" placeholder="+ 7(___)___-__-__ " name="" id="">
+          <input required className="calculator__form-input" type="tel" placeholder="+ 7(___)___-__-__ " name="" id="">
 
           <input type="submit" className="button calculator__button-submit" value="Рассчитать стоимость" name="" id="">
         </form>
@@ -276,7 +276,7 @@ export default {
 }
 
 .calculator__item-radio-wrapper .calculator__radio-checkmark:after {
-  top: 12%;
+  top: 8%;
   left: 10%;
   background: #693030;
 
@@ -484,41 +484,46 @@ export default {
   border-radius: 16px;
   padding: 55px 29px 55px 100px;
 }
+
 .calculator__form-title {
   font-family: 'garamond', sans-serif;
   font-size: 40px;
   color: #2F2F2F;
   margin: 0 0 25px 0;
-font-weight: 400;
-line-height: 40px;
-text-align: left;
+  font-weight: 400;
+  line-height: 40px;
+  text-align: left;
 
 }
+
 .calculator__content {
   display: flex;
   gap: 50px;
   flex-wrap: wrap;
   justify-content: space-between;
 }
+
 .calculator__form-prev {
   font-family: 'lato', sans-serif;
   font-size: 18px;
   color: #3C3D3D;
   max-width: 314px;
-font-weight: 400;
-line-height: 27px;
-letter-spacing: 0.01em;
-text-align: left;
+  font-weight: 400;
+  line-height: 27px;
+  letter-spacing: 0.01em;
+  text-align: left;
 
 }
+
 .calculator__form {
   width: 100%;
   max-width: 735px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 30px;
-    
+
 }
+
 .calculator__form-input {
   border-radius: 10px;
   background: #ffffff;
@@ -533,6 +538,7 @@ text-align: left;
   color: #3c3d3d80;
   outline: none;
 }
+
 .calculator__button-submit {
   border-radius: 16px;
   padding: 19px 10px;
@@ -541,5 +547,80 @@ text-align: left;
   font-weight: 600;
   font-size: 18px;
   min-width: 225px;
+}
+
+
+
+
+
+@media(max-width:769px) {
+ 
+  .calculator__bathroom-radio {
+    flex-direction: column;
+    align-items: start;
+    gap: 18px;
+  }
+
+  .calculator__radio-content {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .calculator__item-radio-wrapper {
+    width: 90%;
+    margin: auto;
+  }
+
+  .calculator__bathroom {
+    flex-direction: column;
+    align-items: start;
+    gap: 15px;
+    margin: 50px 0 25px 0;
+    width: 90%;
+    margin: 50px  auto 25px auto;
+  }
+
+  .calculator__walls {
+    width: 90%;
+  }
+
+
+}
+
+@media(max-width: 426px){
+  .block__title-text {
+        font-size: 25px;
+        font-weight: 400;
+        line-height: 25px;
+
+    }
+  .calculator{
+    width: 100%;
+  }
+  .calculator__form-title{
+    width: 90%;
+    margin:0 auto 25px auto;
+  }
+.calculator__form-prev{
+  width: 90%;
+  max-width: none;
+
+  margin: auto;
+}
+  .calculator__form-wrapper{
+    border-radius: 0;
+    padding: 0;
+    background: #fff;
+  }
+  .calculator__form{
+    background: #F6EDE3;
+padding: 35px;
+  }
+  .calculator__item-name{
+    font-size: 16px;
+  }
+  .calculator__square-input{
+    max-width: 149px;
+  }
 }
 </style>

@@ -250,6 +250,27 @@
 
 
                 <div className="portfolio__item">
+
+
+                    <div className="portfolio__mobile-text" v-if="showMobilePortfolioText">
+                        <p className="portfolio__item-title">Ремонт санузла в стиле лофт</p>
+                        <div className="portfolio__item-info">
+
+                            <div className="portfolio__item-property">
+                                <p className="portfolio__property-title">4,2 m2</p>
+                                <p className="portfolio__property-description">Площадь санузла </p>
+                            </div>
+
+
+                            <div className="portfolio__item-property">
+                                <p className="portfolio__property-title">15 дней</p>
+                                <p className="portfolio__property-description">Сроки ремонта </p>
+                            </div>
+
+                        </div>
+
+
+                    </div>
                     <div className="portfolio__left">
                         <div className="portfolio__ba">
 
@@ -281,23 +302,26 @@
                     </div>
 
                     <div className="portfolio__right">
-                        <p className="portfolio__item-title">Ремонт санузла в стиле лофт</p>
-                        <div className="portfolio__item-info">
+                        <div className="portfolio__text" v-if="!showMobilePortfolioText">
+                            <p className="portfolio__item-title">Ремонт санузла в стиле лофт</p>
+                            <div className="portfolio__item-info">
 
-                            <div className="portfolio__item-property">
-                                <p className="portfolio__property-title">4,2 m2</p>
-                                <p className="portfolio__property-description">Площадь санузла </p>
+                                <div className="portfolio__item-property">
+                                    <p className="portfolio__property-title">4,2 m2</p>
+                                    <p className="portfolio__property-description">Площадь санузла </p>
+                                </div>
+
+
+                                <div className="portfolio__item-property">
+                                    <p className="portfolio__property-title">15 дней</p>
+                                    <p className="portfolio__property-description">Сроки ремонта </p>
+                                </div>
+
                             </div>
-
-
-                            <div className="portfolio__item-property">
-                                <p className="portfolio__property-title">15 дней</p>
-                                <p className="portfolio__property-description">Сроки ремонта </p>
-                            </div>
-
                         </div>
 
-                        <div @click="setVideo('https://www.youtube.com/embed/WNgdiARySmY?si=a1jNcAYyYk4_Z-0R',true)"  className="portfolio__video">
+                        <div @click="setVideo('https://www.youtube.com/embed/WNgdiARySmY?si=a1jNcAYyYk4_Z-0R', true)"
+                            className="portfolio__video">
                             <img src="../../assets/img/watch1.webp" className="portfolio__video-back" alt="">
                             <a href="#" className="portfolio__item-link">
                                 <img src="../../assets/img/playvideo.webp" className="portfolio__play-video" alt="">
@@ -313,6 +337,27 @@
 
 
                 <div className="portfolio__item">
+
+
+                    <div className="portfolio__mobile-text" v-if="showMobilePortfolioText">
+                        <p className="portfolio__item-title">Ремонт ванной комнаты
+                            и санузла</p>
+                        <div className="portfolio__item-info">
+
+                            <div className="portfolio__item-property">
+                                <p className="portfolio__property-title">5 m2</p>
+                                <p className="portfolio__property-description">Площадь санузла </p>
+                            </div>
+
+
+                            <div className="portfolio__item-property">
+                                <p className="portfolio__property-title"> 20 дней</p>
+                                <p className="portfolio__property-description">Сроки ремонта </p>
+                            </div>
+
+                        </div>
+
+                    </div>
                     <div className="portfolio__left">
                         <div className="portfolio__ba">
 
@@ -344,24 +389,28 @@
                     </div>
 
                     <div className="portfolio__right">
-                        <p className="portfolio__item-title">Ремонт ванной комнаты
-                            и санузла</p>
-                        <div className="portfolio__item-info">
+                        <div className="portfolio__text" v-if="!showMobilePortfolioText">
 
-                            <div className="portfolio__item-property">
-                                <p className="portfolio__property-title">5 m2</p>
-                                <p className="portfolio__property-description">Площадь санузла </p>
+                            <p className="portfolio__item-title">Ремонт ванной комнаты
+                                и санузла</p>
+                            <div className="portfolio__item-info">
+
+                                <div className="portfolio__item-property">
+                                    <p className="portfolio__property-title">5 m2</p>
+                                    <p className="portfolio__property-description">Площадь санузла </p>
+                                </div>
+
+
+                                <div className="portfolio__item-property">
+                                    <p className="portfolio__property-title"> 20 дней</p>
+                                    <p className="portfolio__property-description">Сроки ремонта </p>
+                                </div>
+
                             </div>
-
-
-                            <div className="portfolio__item-property">
-                                <p className="portfolio__property-title"> 20 дней</p>
-                                <p className="portfolio__property-description">Сроки ремонта </p>
-                            </div>
-
                         </div>
 
-                        <div  @click="setVideo('https://www.youtube.com/embed/ZYzaDxIw1sI?si=gpDoatVwgHl0oMxu',true)"  className="portfolio__video">
+                        <div @click="setVideo('https://www.youtube.com/embed/ZYzaDxIw1sI?si=gpDoatVwgHl0oMxu', true)"
+                            className="portfolio__video">
                             <img src="../../assets/img/watch1.webp" className="portfolio__video-back" alt="">
                             <a href="#" className="portfolio__item-link">
                                 <img src="../../assets/img/playvideo.webp" className="portfolio__play-video" alt="">
@@ -377,6 +426,26 @@
 
 
                 <div className="portfolio__item">
+
+
+                    <div className="portfolio__mobile-text" v-if="showMobilePortfolioText">
+                        <p className="portfolio__item-title">Ремонт раздельного санузла</p>
+                        <div className="portfolio__item-info">
+
+                            <div className="portfolio__item-property">
+                                <p className="portfolio__property-title">4 m2</p>
+                                <p className="portfolio__property-description">Площадь санузла </p>
+                            </div>
+
+
+                            <div className="portfolio__item-property">
+                                <p className="portfolio__property-title">15 дней</p>
+                                <p className="portfolio__property-description">Сроки ремонта </p>
+                            </div>
+
+                        </div>
+
+                    </div>
                     <div className="portfolio__left">
                         <div className="portfolio__ba">
 
@@ -408,23 +477,27 @@
                     </div>
 
                     <div className="portfolio__right">
-                        <p className="portfolio__item-title">Ремонт раздельного санузла</p>
-                        <div className="portfolio__item-info">
+                        <div className="portfolio__text" v-if="!showMobilePortfolioText">
 
-                            <div className="portfolio__item-property">
-                                <p className="portfolio__property-title">4 m2</p>
-                                <p className="portfolio__property-description">Площадь санузла </p>
+                            <p className="portfolio__item-title">Ремонт раздельного санузла</p>
+                            <div className="portfolio__item-info">
+
+                                <div className="portfolio__item-property">
+                                    <p className="portfolio__property-title">4 m2</p>
+                                    <p className="portfolio__property-description">Площадь санузла </p>
+                                </div>
+
+
+                                <div className="portfolio__item-property">
+                                    <p className="portfolio__property-title">15 дней</p>
+                                    <p className="portfolio__property-description">Сроки ремонта </p>
+                                </div>
+
                             </div>
-
-
-                            <div className="portfolio__item-property">
-                                <p className="portfolio__property-title">15 дней</p>
-                                <p className="portfolio__property-description">Сроки ремонта </p>
-                            </div>
-
                         </div>
 
-                        <div  @click="setVideo('https://www.youtube.com/embed/_nDCLhRUojE?si=mcZ9kUpSGB3pNr67',true)"  className="portfolio__video">
+                        <div @click="setVideo('https://www.youtube.com/embed/_nDCLhRUojE?si=mcZ9kUpSGB3pNr67', true)"
+                            className="portfolio__video">
                             <img src="../../assets/img/watch1.webp" className="portfolio__video-back" alt="">
                             <a href="#" className="portfolio__item-link">
                                 <img src="../../assets/img/playvideo.webp" className="portfolio__play-video" alt="">
@@ -440,6 +513,27 @@
 
 
                 <div className="portfolio__item">
+
+
+                    <div className="portfolio__mobile-text" v-if="showMobilePortfolioText">
+
+                        <p className="portfolio__item-title">Ремонт совмещенного санузла</p>
+                        <div className="portfolio__item-info">
+
+                            <div className="portfolio__item-property">
+                                <p className="portfolio__property-title">4 m2</p>
+                                <p className="portfolio__property-description">Площадь санузла </p>
+                            </div>
+
+
+                            <div className="portfolio__item-property">
+                                <p className="portfolio__property-title">14 дней</p>
+                                <p className="portfolio__property-description">Сроки ремонта </p>
+                            </div>
+
+                        </div>
+
+                    </div>
                     <div className="portfolio__left">
                         <div className="portfolio__ba">
 
@@ -471,23 +565,27 @@
                     </div>
 
                     <div className="portfolio__right">
-                        <p className="portfolio__item-title">Ремонт совмещенного санузла</p>
-                        <div className="portfolio__item-info">
+                        <div className="portfolio__text" v-if="!showMobilePortfolioText">
 
-                            <div className="portfolio__item-property">
-                                <p className="portfolio__property-title">4 m2</p>
-                                <p className="portfolio__property-description">Площадь санузла </p>
+                            <p className="portfolio__item-title">Ремонт совмещенного санузла</p>
+                            <div className="portfolio__item-info">
+
+                                <div className="portfolio__item-property">
+                                    <p className="portfolio__property-title">4 m2</p>
+                                    <p className="portfolio__property-description">Площадь санузла </p>
+                                </div>
+
+
+                                <div className="portfolio__item-property">
+                                    <p className="portfolio__property-title">14 дней</p>
+                                    <p className="portfolio__property-description">Сроки ремонта </p>
+                                </div>
+
                             </div>
-
-
-                            <div className="portfolio__item-property">
-                                <p className="portfolio__property-title">14 дней</p>
-                                <p className="portfolio__property-description">Сроки ремонта </p>
-                            </div>
-
                         </div>
 
-                        <div  @click="setVideo('https://www.youtube.com/embed/SOnbnDgvH84?si=Eib5YmSq8PAkAMYn',true)"  className="portfolio__video">
+                        <div @click="setVideo('https://www.youtube.com/embed/SOnbnDgvH84?si=Eib5YmSq8PAkAMYn', true)"
+                            className="portfolio__video">
                             <img src="../../assets/img/watch1.webp" className="portfolio__video-back" alt="">
                             <a href="#" className="portfolio__item-link">
                                 <img src="../../assets/img/playvideo.webp" className="portfolio__play-video" alt="">
@@ -503,7 +601,29 @@
 
 
                 <div className="portfolio__item">
+
+
+                    <div className="portfolio__mobile-text" v-if="showMobilePortfolioText">
+                        <p className="portfolio__item-title">Ремонт санузла</p>
+                        <div className="portfolio__item-info">
+
+                            <div className="portfolio__item-property">
+                                <p className="portfolio__property-title">4,5 m2</p>
+                                <p className="portfolio__property-description">Площадь санузла </p>
+                            </div>
+
+
+                            <div className="portfolio__item-property">
+                                <p className="portfolio__property-title">15 дней</p>
+                                <p className="portfolio__property-description">Сроки ремонта </p>
+                            </div>
+
+                        </div>
+
+                    </div>
                     <div className="portfolio__left">
+
+
                         <div className="portfolio__ba">
 
                             <div className="portfolio__before">
@@ -534,23 +654,26 @@
                     </div>
 
                     <div className="portfolio__right">
-                        <p className="portfolio__item-title">Ремонт санузла</p>
-                        <div className="portfolio__item-info">
+                        <div className="portfolio__text" v-if="!showMobilePortfolioText">
 
-                            <div className="portfolio__item-property">
-                                <p className="portfolio__property-title">4,5 m2</p>
-                                <p className="portfolio__property-description">Площадь санузла </p>
+                            <p className="portfolio__item-title">Ремонт санузла</p>
+                            <div className="portfolio__item-info">
+
+                                <div className="portfolio__item-property">
+                                    <p className="portfolio__property-title">4,5 m2</p>
+                                    <p className="portfolio__property-description">Площадь санузла </p>
+                                </div>
+
+
+                                <div className="portfolio__item-property">
+                                    <p className="portfolio__property-title">15 дней</p>
+                                    <p className="portfolio__property-description">Сроки ремонта </p>
+                                </div>
+
                             </div>
-
-
-                            <div className="portfolio__item-property">
-                                <p className="portfolio__property-title">15 дней</p>
-                                <p className="portfolio__property-description">Сроки ремонта </p>
-                            </div>
-
                         </div>
-
-                        <div  @click="setVideo('https://www.youtube.com/embed/q0PXMFtsScU?si=gFV4rGMY1ep1Qp39',true)"  className="portfolio__video">
+                        <div @click="setVideo('https://www.youtube.com/embed/q0PXMFtsScU?si=gFV4rGMY1ep1Qp39', true)"
+                            className="portfolio__video">
                             <img src="../../assets/img/watch1.webp" className="portfolio__video-back" alt="">
                             <a href="#" className="portfolio__item-link">
                                 <img src="../../assets/img/playvideo.webp" className="portfolio__play-video" alt="">
@@ -566,6 +689,26 @@
 
 
                 <div className="portfolio__item">
+
+
+                    <div className="portfolio__mobile-text" v-if="showMobilePortfolioText">
+
+                        <p className="portfolio__item-title">Ремонт ванной комнаты</p>
+                        <div className="portfolio__item-info">
+
+                            <div className="portfolio__item-property">
+                                <p className="portfolio__property-title">4,5 m2</p>
+                                <p className="portfolio__property-description">Площадь санузла </p>
+                            </div>
+
+
+                            <div className="portfolio__item-property">
+                                <p className="portfolio__property-title">16 дней</p>
+                                <p className="portfolio__property-description">Сроки ремонта </p>
+                            </div>
+
+                        </div>
+                    </div>
                     <div className="portfolio__left">
                         <div className="portfolio__ba">
 
@@ -597,23 +740,27 @@
                     </div>
 
                     <div className="portfolio__right">
-                        <p className="portfolio__item-title">Ремонт ванной комнаты</p>
-                        <div className="portfolio__item-info">
+                        <div className="portfolio__text" v-if="!showMobilePortfolioText">
 
-                            <div className="portfolio__item-property">
-                                <p className="portfolio__property-title">4,5 m2</p>
-                                <p className="portfolio__property-description">Площадь санузла </p>
+                            <p className="portfolio__item-title">Ремонт ванной комнаты</p>
+                            <div className="portfolio__item-info">
+
+                                <div className="portfolio__item-property">
+                                    <p className="portfolio__property-title">4,5 m2</p>
+                                    <p className="portfolio__property-description">Площадь санузла </p>
+                                </div>
+
+
+                                <div className="portfolio__item-property">
+                                    <p className="portfolio__property-title">16 дней</p>
+                                    <p className="portfolio__property-description">Сроки ремонта </p>
+                                </div>
+
                             </div>
-
-
-                            <div className="portfolio__item-property">
-                                <p className="portfolio__property-title">16 дней</p>
-                                <p className="portfolio__property-description">Сроки ремонта </p>
-                            </div>
-
                         </div>
 
-                        <div  @click="setVideo('https://www.youtube.com/embed/dTrbg8l8Xfs?si=2thTfueDgSUG817S',true)"  className="portfolio__video">
+                        <div @click="setVideo('https://www.youtube.com/embed/dTrbg8l8Xfs?si=2thTfueDgSUG817S', true)"
+                            className="portfolio__video">
                             <img src="../../assets/img/watch1.webp" className="portfolio__video-back" alt="">
                             <a href="#" className="portfolio__item-link">
                                 <img src="../../assets/img/playvideo.webp" className="portfolio__play-video" alt="">
@@ -632,7 +779,7 @@
         </div>
 
 
-        <Calculator/>
+        <Calculator />
 
 
 
@@ -652,19 +799,34 @@ export default {
     components: {
         Calculator,
     },
-    props:{
-        videoSrc:{
+    props: {
+        videoSrc: {
             type: String,
             required: true
         },
-        isVideoPlaying:{
+        isVideoPlaying: {
             type: Boolean,
-            required:true,
+            required: true,
 
         },
-        setVideo:{
+        setVideo: {
             type: Function,
             required: true
+        }
+    },
+    data() {
+        return {
+            showMobilePortfolioText: false
+        };
+    },
+
+    created() {
+        this.checkSize();
+        window.addEventListener('resize', this.checkSize)
+    },
+    methods: {
+        checkSize() {
+            this.showMobilePortfolioText = innerWidth < 769
         }
     }
 
@@ -850,376 +1012,629 @@ export default {
 
 
 .count-form {
-  padding: 150px 0;
-  width: 90%;
-  max-width: 1600px;
-  margin: auto;
+    padding: 150px 0;
+    width: 90%;
+    max-width: 1600px;
+    margin: auto;
 }
+
 .count-form__block-title {
-  max-width: 1200px;
-  margin: auto;
+    max-width: 1200px;
+    margin: auto;
 }
 
 .count-form__title-text {
-  text-align: left;
+    text-align: left;
 }
 
 .count-form__title-line {
-  margin: 20px 0 0 0;
-  max-width: 711px;
+    margin: 20px 0 0 0;
+    max-width: 711px;
 }
 
 .count-form__container {
-  position: relative;
-  display: grid;
-  align-items: center;
-  margin: 100px 0 0 0;
+    position: relative;
+    display: grid;
+    align-items: center;
+    margin: 100px 0 0 0;
 }
 
 .count-form__img {
-  height: 364.89px;
-  width: 70%;
-  object-fit: cover;
-  object-position: center;
-  /* max-width: 815px; */
-  position: absolute;
-  left: -10%;
-  z-index: 0;
+    height: 364.89px;
+    width: 70%;
+    object-fit: cover;
+    object-position: center;
+    /* max-width: 815px; */
+    position: absolute;
+    left: -10%;
+    z-index: 0;
 }
 
 .count-form__form {
-  width: 100%;
-  max-width: 973px;
-  background: rgb(242, 229, 213);
-  background: linear-gradient(
-    270deg,
-    rgb(242, 229, 213) 65%,
-    rgba(21, 0, 87, 0) 100%
-  );
-  padding: 40px 100px 40px 40px;
-  border-radius: 16px;
-  align-self: end;
-  justify-self: end;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: end;
-  gap: 15px;
+    width: 100%;
+    max-width: 973px;
+    background: rgb(242, 229, 213);
+    background: linear-gradient(270deg,
+            rgb(242, 229, 213) 65%,
+            rgba(21, 0, 87, 0) 100%);
+    padding: 40px 100px 40px 40px;
+    border-radius: 16px;
+    align-self: end;
+    justify-self: end;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 15px;
 }
 
-.count-form__submit{
+.count-form__submit {
     width: 100%;
     max-width: 300px;
     border-radius: 16px;
 }
+
 .count-form__pre-input {
-  font-family: "lato", sans-serif;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 27px;
-  letter-spacing: 0.01em;
-  text-align: left;
-  color: #3c3d3d;
-  margin: 0 0 3px 0;
+    font-family: "lato", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: 0.01em;
+    text-align: left;
+    color: #3c3d3d;
+    margin: 0 0 3px 0;
 }
 
 .count-form__input {
-  border-radius: 10px;
-  background: #ffffff;
-  border: none;
-  padding: 15px 29px;
+    border-radius: 10px;
+    background: #ffffff;
+    border: none;
+    padding: 15px 29px;
 
-  font-family: "lato", sans-serif;
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 30px;
-  letter-spacing: 0.01em;
-  text-align: left;
-  color: #3c3d3d80;
-  outline: none;
+    font-family: "lato", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: 0.01em;
+    text-align: left;
+    color: #3c3d3d80;
+    outline: none;
 }
 
 .specializations {
-  width: 90%;
-  max-width: 1600px;
-  margin: auto;
+    width: 90%;
+    max-width: 1600px;
+    margin: auto;
 }
 
 .specializations__wrapper {
-  max-width: 1171px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 30px;
-  margin: 100px auto 0 auto;
+    max-width: 1171px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    margin: 100px auto 0 auto;
 }
 
 .specializations__item {
-  max-width: 270px;
-  width: 100%;
-  border-radius: 16px;
-  padding: 70px 0;
-  display: grid;
-  margin: auto;
-  height: 100%;
+    max-width: 270px;
+    width: 100%;
+    border-radius: 16px;
+    padding: 70px 0;
+    display: grid;
+    margin: auto;
+    height: 100%;
 }
 
 .specializations__item1 {
-  background: url(../../assets/img/portf_img1.webp) no-repeat;
-  background-position: center;
-  background-size: cover;
+    background: url(../../assets/img/portf_img1.webp) no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 .specializations__container {
-  width: 100%;
-  padding: 16px;
-  background: #d0b194e0;
-  align-self: center;
+    width: 100%;
+    padding: 16px;
+    background: #d0b194e0;
+    align-self: center;
 }
 
 .specializations__name {
-  font-family: "lato", sans-serif;
-  font-size: 17px;
-  font-weight: 500;
-  line-height: 25.5px;
-  letter-spacing: 0.01em;
-  text-align: center;
-  color: #ffffff;
+    font-family: "lato", sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 25.5px;
+    letter-spacing: 0.01em;
+    text-align: center;
+    color: #ffffff;
 }
 
 .specializations__item2 {
-  background: url(../../assets/img/portf_img2.webp) no-repeat;
-  background-position: center;
-  background-size: cover;
+    background: url(../../assets/img/portf_img2.webp) no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 .specializations__item3 {
-  background: url(../../assets/img/portf_img3.webp) no-repeat;
-  background-position: center;
-  background-size: cover;
+    background: url(../../assets/img/portf_img3.webp) no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 .specializations__item4 {
-  background: url(../../assets/img/portf_img4.webp) no-repeat;
-  background-position: center;
-  background-size: cover;
+    background: url(../../assets/img/portf_img4.webp) no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 .specializations__item5 {
-  background: url(../../assets/img/portf_img5.webp) no-repeat;
-  background-position: center;
-  background-size: cover;
+    background: url(../../assets/img/portf_img5.webp) no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 .specializations__item6 {
-  background: url(../../assets/img/portf_img6.webp) no-repeat;
-  background-position: center;
-  background-size: cover;
+    background: url(../../assets/img/portf_img6.webp) no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 .specializations__item7 {
-  background: url(../../assets/img/portf_img7.webp) no-repeat;
-  background-position: center;
-  background-size: cover;
+    background: url(../../assets/img/portf_img7.webp) no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 .specializations__item8 {
-  background: url(../../assets/img/portf_img8.webp) no-repeat;
-  background-position: center;
-  background-size: cover;
+    background: url(../../assets/img/portf_img8.webp) no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 .specializations__item9 {
-  background: url(../../assets/img/portf_img9.webp) no-repeat;
-  background-position: center;
-  background-size: cover;
+    background: url(../../assets/img/portf_img9.webp) no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 .specializations__item10 {
-  background: url(../../assets/img/portf_img10.webp) no-repeat;
-  background-position: center;
-  background-size: cover;
+    background: url(../../assets/img/portf_img10.webp) no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 .specializations__item11 {
-  background: url(../../assets/img/portf_img11.webp) no-repeat;
-  background-position: center;
-  background-size: cover;
+    background: url(../../assets/img/portf_img11.webp) no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 .specializations__item12 {
-  background: url(../../assets/img/portf_img12.webp) no-repeat;
-  background-position: center;
-  background-size: cover;
+    background: url(../../assets/img/portf_img12.webp) no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 .portfolio {
-  width: 90%;
-  max-width: 1600px;
-  margin: auto;
-  padding: 120px 0;
+    width: 90%;
+    max-width: 1600px;
+    margin: auto;
+    padding: 120px 0;
 }
 
 .portfolio__wrapper {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(520px, 1fr));
-  max-width: 1429px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(520px, 1fr));
+    max-width: 1429px;
 
-  gap: 30px;
-  width: 100%;
-  margin: 100px auto 0 auto;
+    gap: 30px;
+    width: 100%;
+    margin: 100px auto 0 auto;
 }
 
 .portfolio__item {
-  box-shadow: 0px 0px 44px 0px #3c3d3d38;
-  padding: 40px 20px;
-  border-radius: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 30px;
-  max-width: 699px;
-  height: 100%;
-  margin: auto;
+    box-shadow: 0px 0px 44px 0px #3c3d3d38;
+    padding: 40px 20px;
+    border-radius: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    max-width: 699px;
+    height: 100%;
+    margin: auto;
 }
 
 .portfolio__left {
-  max-width: 379px;
+    max-width: 379px;
 }
 
 .portfolio__ba {
-  display: grid;
-  position: relative;
-  grid-template-columns: 1fr 1fr;
-  gap: 3px;
+    display: grid;
+    position: relative;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px;
 }
 
 .portfolio__before {
-  position: relative;
-  overflow: hidden;
-  border-radius: 16px 0px 0px 16px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px 0px 0px 16px;
 }
 
 .portfolio__ba-img {
-  object-fit: cover;
-  object-position: center;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
 .portfolio__ba-container {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  background: #d0b194e0;
-  padding: 5px;
-  font-family: "lato", sans-serif;
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 30px;
-  letter-spacing: 0.01em;
-  text-align: center;
-  color: #ffffff;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: #d0b194e0;
+    padding: 5px;
+    font-family: "lato", sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 30px;
+    letter-spacing: 0.01em;
+    text-align: center;
+    color: #ffffff;
 }
 
 .portfolio__after {
-  overflow: hidden;
-  position: relative;
-  border-radius: 0px 16px 16px 0px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 0px 16px 16px 0px;
 }
 
 .portfolio__arrows {
-  position: absolute;
-  align-self: center;
-  justify-self: center;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+    position: absolute;
+    align-self: center;
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 .portfolio__others-img {
-  margin: 15px 0 0 0;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+    margin: 15px 0 0 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
 }
 
 .portfolio__others-item {
-  width: 100%;
+    width: 100%;
 }
 
 .portfolio__right {
-  max-width: 252.26px;
+    max-width: 252.26px;
 }
 
 .portfolio__item-title {
-  font-family: "garamond", sans-serif;
-  font-size: 22px;
-  color: #2f2f2f;
-  font-weight: 500;
-  line-height: 22px;
-  text-align: left;
+    font-family: "garamond", sans-serif;
+    font-size: 22px;
+    color: #2f2f2f;
+    font-weight: 500;
+    line-height: 22px;
+    text-align: left;
 }
 
 .portfolio__item-info {
-  display: flex;
-  align-items: start;
-  justify-content: space-between;
-  gap: 15px;
-  margin: 30px 0;
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    gap: 15px;
+    margin: 30px 0;
 }
 
 .portfolio__property-title {
-  font-family: "lato", sans-serif;
-  font-size: 15px;
-  color: #3c3d3d;
-  font-weight: 900;
-  line-height: 22.5px;
-  letter-spacing: 0.01em;
-  text-align: left;
+    font-family: "lato", sans-serif;
+    font-size: 15px;
+    color: #3c3d3d;
+    font-weight: 900;
+    line-height: 22.5px;
+    letter-spacing: 0.01em;
+    text-align: left;
 }
 
 .portfolio__property-description {
-  font-family: "lato", sans-serif;
-  font-size: 15px;
-  font-weight: 400;
-  line-height: 22.5px;
-  letter-spacing: 0.01em;
-  text-align: left;
-  color: #3c3d3d;
+    font-family: "lato", sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 22.5px;
+    letter-spacing: 0.01em;
+    text-align: left;
+    color: #3c3d3d;
 }
 
 .portfolio__video {
-  position: relative;
-  display: grid;
-  cursor: pointer;
+    position: relative;
+    display: grid;
+    cursor: pointer;
 }
-.portfolio__video:hover .portfolio__item-link{
+
+.portfolio__video:hover .portfolio__item-link {
     scale: 1.1;
 }
 
 .portfolio__video-back {
 
-  width: 100%;
+    width: 100%;
 }
 
 .portfolio__item-link {
     transition: 0.3s;
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  text-decoration: none;
-  position: absolute;
-  align-self: center;
-  justify-self: center;
-  pointer-events: none
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    text-decoration: none;
+    position: absolute;
+    align-self: center;
+    justify-self: center;
+    pointer-events: none
 }
 
 .portfolio__link-text {
-  font-family: "lato", sans-serif;
-  font-size: 12px;
-  line-height: 18px;
-  letter-spacing: 0.035em;
-  text-align: left;
-  color: #ffffff;
-  text-transform: uppercase;
+    font-family: "lato", sans-serif;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: 0.035em;
+    text-align: left;
+    color: #ffffff;
+    text-transform: uppercase;
 }
 
+
+@media(max-width:769px) {
+
+
+    .count-form__img {
+        display: none;
+    }
+
+    .count-form {
+        width: 100%;
+    }
+
+    .count-form__block-title {
+        width: 90%;
+        margin: auto;
+    }
+
+    .count-form__form {
+        border-radius: 0;
+        background:
+            linear-gradient(268.58deg, #F2E5D5 1.21%, rgba(255, 255, 255, 0.99) 160.32%);
+        align-items: center;
+        padding: 40px 15px;
+
+    }
+
+
+    .portfolio {
+        width: 100%;
+    }
+
+    .portfolio__wrapper {
+        gap: 20px;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .portfolio__item {
+        flex-direction: column;
+        width: 100%;
+        border-radius: 0;
+        padding: 40px;
+
+        max-width: none;
+        background: linear-gradient(0deg, rgba(248, 217, 188, 0.22), rgba(248, 217, 188, 0.22)),
+            linear-gradient(270deg, #F2E5D5 0%, rgba(255, 255, 255, 0.99) 112.52%);
+        box-shadow: 0px 15px 50px 5px #0000001A;
+
+    }
+
+    .portfolio__left {
+        max-width: none;
+        width: 100%;
+    }
+
+    .portfolio__ba-img {
+        width: 100%;
+    }
+
+    .portfolio__right {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .portfolio__video {
+        width: 70%;
+        max-height: 100px;
+        overflow: hidden;
+        border-radius: 16px;
+        margin: auto;
+    }
+
+    .portfolio__video-back {
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .portfolio__button {
+        width: fit-content;
+        padding: 12px 48px;
+        margin: 20px auto 0 auto;
+    }
+
+    .portfolio__item-title {
+        text-align: center;
+
+    }
+
+    .portfolio__item-info {
+        max-width: 360px;
+
+        margin: 20px auto;
+
+    }
+
+    .portfolio__item-property p {
+        text-align: center;
+    }
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+@media(max-width:426px) {
+    .main__offer-text {
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 21.18px;
+        letter-spacing: 0.17em;
+
+    }
+
+    .main__line {
+        max-width: 35px;
+    }
+
+    .main__slogan {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 16.95px;
+
+    }
+
+    .main__container {
+        padding: 110px 0 160px;
+    }
+
+    .why-us {
+        width: 100%;
+        padding: 77px 16px 28px 16px;
+    }
+
+    .why-us__prev {
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 16.9px;
+        letter-spacing: 0.04em;
+
+    }
+
+    .why-us__title {
+        font-size: 25px;
+        font-weight: 400;
+        line-height: 25px;
+        max-width: 35px 0 0 0;
+    }
+
+    .why-us__line {
+        margin: 40px 0 30px 0;
+    }
+
+    .why-us__item-title {
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 24px;
+
+    }
+
+    .why-us__item-description {
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 19.5px;
+        letter-spacing: 0.01em;
+        text-align: lft;
+
+    }
+
+    .why-us__link {
+        margin: 21px auto 0 auto;
+    }
+
+    .why-us__link-text {
+        font-size: 11px;
+        font-weight: 400;
+        line-height: 16.5px;
+        letter-spacing: 0.01em;
+
+    }
+
+    .why-us__arrow-img {
+        max-width: 14px;
+    }
+
+    .why-us__bullits {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+
+    .block__title-text {
+        font-size: 25px;
+        font-weight: 400;
+        line-height: 25px;
+
+    }
+
+    .count-form {
+        padding: 80px 0;
+    }
+
+    .count-form__container{
+        margin: 50px 0 0 0;
+    }
+
+    .count-form__pre-input{
+font-size: 14px;
+font-weight: 400;
+line-height: 21px;
+letter-spacing: 0.01em;
+
+    }
+
+    .count-form__input{
+font-size: 18px;
+font-weight: 400;
+line-height: 27px;
+letter-spacing: 0.01em;
+
+    }
+
+    .specializations__name{
+font-size: 8px;
+font-weight: 500;
+line-height: 12px;
+letter-spacing: 0.01em;
+
+    }
+
+    .specializations__container{
+        padding: 8px 13px;
+    }
+
+    .specializations__item {
+        padding: 36px 0;
+    }
+    .specializations__wrapper{
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+    .portfolio__video{
+        width: 100%;
+    }
+    .portfolio__item{
+        padding: 40px 10px;
+    }
+}
 </style>

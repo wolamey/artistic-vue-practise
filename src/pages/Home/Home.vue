@@ -782,6 +782,498 @@
         <Calculator />
 
 
+        <div className="prices">
+            <img src="./../../assets/img/prices__back.png" className="prices__back" alt="">
+            <div className="prices__container">
+                <div className="block__title">
+                    <p className="block__title-text">
+                        Цены на услуги по ремонту ванной комнаты
+                    </p>
+                    <div className="block__title-line"></div>
+                </div>
+
+
+                <div className="prices__wrapper prices__wrapper-desctop">
+
+
+
+                    <table className="prices__item-table">
+                        <tbody className="prices__item-table-body">
+                            <tr className="prices__item-table-tr ">
+                                <td className="prices__item-table-td prices__item-table-title" colspan="2">Отделка стен
+                                </td>
+                            </tr>
+                            <tr className="prices__item-table-tr">
+                                <td className="prices__item-table-td prices__item-table-name">Шпатлевка стен</td>
+                                <td className="prices__item-table-td prices__item-table-price">от 200р. кв.м
+                                </td>
+                            </tr>
+                            <tr className="prices__item-table-tr">
+                                <td className="prices__item-table-td prices__item-table-name">Облицовка стен мозаикой
+                                </td>
+                                <td className="prices__item-table-td prices__item-table-price">от 800р. кв.м
+                                </td>
+                            </tr>
+                            <tr className="prices__item-table-tr">
+                                <td className="prices__item-table-td prices__item-table-name">Укладка плитки на стены
+                                </td>
+                                <td className="prices__item-table-td prices__item-table-price">от 450р. кв.м
+                                </td>
+                            </tr>
+                            <tr className="prices__item-table-tr">
+                                <td className="prices__item-table-td prices__item-table-name">Декоративная штукатурка
+                                </td>
+                                <td className="prices__item-table-td prices__item-table-price">от 400р. кв.м
+                                </td>
+                            </tr>
+                            <tr className="prices__item-table-tr">
+                                <td className="prices__item-table-td prices__item-table-name">Покраска стен</td>
+                                <td className="prices__item-table-td prices__item-table-price">от 200р. кв.м
+                                </td>
+                            </tr>
+                            <tr className="prices__item-table-tr">
+                                <td className="prices__item-table-td prices__item-table-name">Штукатурка стен</td>
+                                <td className="prices__item-table-td prices__item-table-price">от 300р. кв.м
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+
+
+
+
+                    <table className="prices__item-table">
+                        <tbody className="prices__item-table-body">
+                            <tr className="prices__item-table-tr ">
+                                <td className="prices__item-table-td prices__item-table-title" colspan="2">Штукатурка
+                                    стен</td>
+                            </tr>
+                            <tr className="prices__item-table-tr">
+                                <td className="prices__item-table-td prices__item-table-name">Утепление пола</td>
+                                <td className="prices__item-table-td prices__item-table-price">от 300р. кв.м
+                                </td>
+                            </tr>
+                            <tr className="prices__item-table-tr">
+                                <td className="prices__item-table-td prices__item-table-name">Укладка керамогранита</td>
+                                <td className="prices__item-table-td prices__item-table-price">от 550р. кв.м
+                                </td>
+                            </tr>
+                            <tr className="prices__item-table-tr">
+                                <td className="prices__item-table-td prices__item-table-name">Облицовка природным камнем
+                                </td>
+                                <td className="prices__item-table-td prices__item-table-price">от 900р. кв.м
+                                </td>
+                            </tr>
+                            <tr className="prices__item-table-tr">
+                                <td className="prices__item-table-td prices__item-table-name">Укладка плитки на пол</td>
+                                <td className="prices__item-table-td prices__item-table-price">от 450р. кв.м
+                                </td>
+                            </tr>
+                            <tr className="prices__item-table-tr">
+                                <td className="prices__item-table-td prices__item-table-name">Стяжка пола</td>
+                                <td className="prices__item-table-td prices__item-table-price">от 350р. кв.м
+                                </td>
+                            </tr>
+                            <tr className="prices__item-table-tr">
+                                <td className="prices__item-table-td prices__item-table-name">Гидроизоляция пола</td>
+                                <td className="prices__item-table-td prices__item-table-price">от 180. кв.м
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+
+
+
+
+                    <table className="prices__item-table">
+                        <tbody className="prices__item-table-body">
+                            <tr className="prices__item-table-tr ">
+                                <td className="prices__item-table-td prices__item-table-title" colspan="2">Отделка
+                                    потолка</td>
+                            </tr>
+                            <tr className="prices__item-table-tr">
+                                <td className="prices__item-table-td prices__item-table-name">Окрашивание потолка</td>
+                                <td className="prices__item-table-td prices__item-table-price">от 180р. кв.м
+                                </td>
+                            </tr>
+                            <tr className="prices__item-table-tr">
+                                <td className="prices__item-table-td prices__item-table-name">Натяжной потолок</td>
+                                <td className="prices__item-table-td prices__item-table-price">от 250р. кв.м
+                                </td>
+                            </tr>
+                            <tr className="prices__item-table-tr">
+                                <td className="prices__item-table-td prices__item-table-name">Реечный потолок</td>
+                                <td className="prices__item-table-td prices__item-table-price">от 300р. кв.м
+                                </td>
+                            </tr>
+                            <tr className="prices__item-table-tr">
+                                <td className="prices__item-table-td prices__item-table-name">Реечный протокол</td>
+                                <td className="prices__item-table-td prices__item-table-price">от 360р. кв.м
+                                </td>
+                            </tr>
+                            <tr className="prices__item-table-tr">
+                                <td className="prices__item-table-td prices__item-table-name">Шпатлевка потолка</td>
+                                <td className="prices__item-table-td prices__item-table-price">от 230р. кв.м
+                                </td>
+                            </tr>
+                            <tr className="prices__item-table-tr">
+                                <td className="prices__item-table-td prices__item-table-name">Штукатурка потолка</td>
+                                <td className="prices__item-table-td prices__item-table-price">от 500р. кв.м
+                                </td>
+                            </tr>
+                            <tr className="prices__item-table-tr">
+                                <td className="prices__item-table-td prices__item-table-name">Шумоизоляция потолка</td>
+                                <td className="prices__item-table-td prices__item-table-price">от 300р. кв.м
+                                </td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+
+
+
+
+
+                    <table className="prices__item-table">
+                        <tbody className="prices__item-table-body">
+                            <tr className="prices__item-table-tr ">
+                                <td className="prices__item-table-td prices__item-table-title" colspan="2">
+                                    Сантехника/электрика</td>
+                            </tr>
+                            <tr className="prices__item-table-tr">
+                                <td className="prices__item-table-td prices__item-table-name">Установка смесителя</td>
+                                <td className="prices__item-table-td prices__item-table-price">от 500р.
+                                </td>
+                            </tr>
+                            <tr className="prices__item-table-tr">
+                                <td className="prices__item-table-td prices__item-table-name">Установка раковины</td>
+                                <td className="prices__item-table-td prices__item-table-price">от 1000р.
+                                </td>
+                            </tr>
+                            <tr className="prices__item-table-tr">
+                                <td className="prices__item-table-td prices__item-table-name">Установка
+                                    полотенцесушителя</td>
+                                <td className="prices__item-table-td prices__item-table-price">от 1000р.
+                                </td>
+                            </tr>
+                            <tr className="prices__item-table-tr">
+                                <td className="prices__item-table-td prices__item-table-name">Установка унитаза</td>
+                                <td className="prices__item-table-td prices__item-table-price">от 1200р.
+                                </td>
+                            </tr>
+                            <tr className="prices__item-table-tr">
+                                <td className="prices__item-table-td prices__item-table-name">Установка ванны</td>
+                                <td className="prices__item-table-td prices__item-table-price">от 1500р.
+                                </td>
+                            </tr>
+                            <tr className="prices__item-table-tr">
+                                <td className="prices__item-table-td prices__item-table-name">Установка душевой кабины
+                                </td>
+                                <td className="prices__item-table-td prices__item-table-price">от 3000р.
+                                </td>
+                            </tr>
+                            <tr className="prices__item-table-tr">
+                                <td className="prices__item-table-td prices__item-table-name">Установка стиральной
+                                    машины</td>
+                                <td className="prices__item-table-td prices__item-table-price">от 700р.
+                                </td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+
+
+
+                </div>
+
+
+                <!-- <div className="prices__slider">
+                    <ssr-carousel >
+
+
+                        <slide :key="1">
+                            
+                    <table className="prices__item-table">
+                        <tbody className="prices__item-table-body">
+                            <tr className="prices__item-table-tr ">
+                                <td className="prices__item-table-td prices__item-table-title" colspan="2">Отделка стен
+                                </td>
+                            </tr>
+                            <tr className="prices__item-table-tr">
+                                <td className="prices__item-table-td prices__item-table-name">Шпатлевка стен</td>
+                                <td className="prices__item-table-td prices__item-table-price">от 200р. кв.м
+                                </td>
+                            </tr>
+                            <tr className="prices__item-table-tr">
+                                <td className="prices__item-table-td prices__item-table-name">Облицовка стен мозаикой
+                                </td>
+                                <td className="prices__item-table-td prices__item-table-price">от 800р. кв.м
+                                </td>
+                            </tr>
+                            <tr className="prices__item-table-tr">
+                                <td className="prices__item-table-td prices__item-table-name">Укладка плитки на стены
+                                </td>
+                                <td className="prices__item-table-td prices__item-table-price">от 450р. кв.м
+                                </td>
+                            </tr>
+                            <tr className="prices__item-table-tr">
+                                <td className="prices__item-table-td prices__item-table-name">Декоративная штукатурка
+                                </td>
+                                <td className="prices__item-table-td prices__item-table-price">от 400р. кв.м
+                                </td>
+                            </tr>
+                            <tr className="prices__item-table-tr">
+                                <td className="prices__item-table-td prices__item-table-name">Покраска стен</td>
+                                <td className="prices__item-table-td prices__item-table-price">от 200р. кв.м
+                                </td>
+                            </tr>
+                            <tr className="prices__item-table-tr">
+                                <td className="prices__item-table-td prices__item-table-name">Штукатурка стен</td>
+                                <td className="prices__item-table-td prices__item-table-price">от 300р. кв.м
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+                        </slide>
+
+
+                    <slide :key="2">
+
+                        <table className="prices__item-table">
+                        <tbody className="prices__item-table-body">
+                            <tr className="prices__item-table-tr ">
+                                <td className="prices__item-table-td prices__item-table-title" colspan="2">Отделка
+                                    потолка</td>
+                            </tr>
+                            <tr className="prices__item-table-tr">
+                                <td className="prices__item-table-td prices__item-table-name">Окрашивание потолка</td>
+                                <td className="prices__item-table-td prices__item-table-price">от 180р. кв.м
+                                </td>
+                            </tr>
+                            <tr className="prices__item-table-tr">
+                                <td className="prices__item-table-td prices__item-table-name">Натяжной потолок</td>
+                                <td className="prices__item-table-td prices__item-table-price">от 250р. кв.м
+                                </td>
+                            </tr>
+                            <tr className="prices__item-table-tr">
+                                <td className="prices__item-table-td prices__item-table-name">Реечный потолок</td>
+                                <td className="prices__item-table-td prices__item-table-price">от 300р. кв.м
+                                </td>
+                            </tr>
+                            <tr className="prices__item-table-tr">
+                                <td className="prices__item-table-td prices__item-table-name">Реечный протокол</td>
+                                <td className="prices__item-table-td prices__item-table-price">от 360р. кв.м
+                                </td>
+                            </tr>
+                            <tr className="prices__item-table-tr">
+                                <td className="prices__item-table-td prices__item-table-name">Шпатлевка потолка</td>
+                                <td className="prices__item-table-td prices__item-table-price">от 230р. кв.м
+                                </td>
+                            </tr>
+                            <tr className="prices__item-table-tr">
+                                <td className="prices__item-table-td prices__item-table-name">Штукатурка потолка</td>
+                                <td className="prices__item-table-td prices__item-table-price">от 500р. кв.м
+                                </td>
+                            </tr>
+                            <tr className="prices__item-table-tr">
+                                <td className="prices__item-table-td prices__item-table-name">Шумоизоляция потолка</td>
+                                <td className="prices__item-table-td prices__item-table-price">от 300р. кв.м
+                                </td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+
+                    </slide>
+
+                    <slide :key="3">
+                        
+                    <table className="prices__item-table">
+                        <tbody className="prices__item-table-body">
+                            <tr className="prices__item-table-tr ">
+                                <td className="prices__item-table-td prices__item-table-title" colspan="2">
+                                    Сантехника/электрика</td>
+                            </tr>
+                            <tr className="prices__item-table-tr">
+                                <td className="prices__item-table-td prices__item-table-name">Установка смесителя</td>
+                                <td className="prices__item-table-td prices__item-table-price">от 500р.
+                                </td>
+                            </tr>
+                            <tr className="prices__item-table-tr">
+                                <td className="prices__item-table-td prices__item-table-name">Установка раковины</td>
+                                <td className="prices__item-table-td prices__item-table-price">от 1000р.
+                                </td>
+                            </tr>
+                            <tr className="prices__item-table-tr">
+                                <td className="prices__item-table-td prices__item-table-name">Установка
+                                    полотенцесушителя</td>
+                                <td className="prices__item-table-td prices__item-table-price">от 1000р.
+                                </td>
+                            </tr>
+                            <tr className="prices__item-table-tr">
+                                <td className="prices__item-table-td prices__item-table-name">Установка унитаза</td>
+                                <td className="prices__item-table-td prices__item-table-price">от 1200р.
+                                </td>
+                            </tr>
+                            <tr className="prices__item-table-tr">
+                                <td className="prices__item-table-td prices__item-table-name">Установка ванны</td>
+                                <td className="prices__item-table-td prices__item-table-price">от 1500р.
+                                </td>
+                            </tr>
+                            <tr className="prices__item-table-tr">
+                                <td className="prices__item-table-td prices__item-table-name">Установка душевой кабины
+                                </td>
+                                <td className="prices__item-table-td prices__item-table-price">от 3000р.
+                                </td>
+                            </tr>
+                            <tr className="prices__item-table-tr">
+                                <td className="prices__item-table-td prices__item-table-name">Установка стиральной
+                                    машины</td>
+                                <td className="prices__item-table-td prices__item-table-price">от 700р.
+                                </td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+                    </slide>
+
+                    <slide :key="4">
+                        
+                    <table className="prices__item-table">
+                        <tbody className="prices__item-table-body">
+                            <tr className="prices__item-table-tr ">
+                                <td className="prices__item-table-td prices__item-table-title" colspan="2">
+                                    Сантехника/электрика</td>
+                            </tr>
+                            <tr className="prices__item-table-tr">
+                                <td className="prices__item-table-td prices__item-table-name">Установка смесителя</td>
+                                <td className="prices__item-table-td prices__item-table-price">от 500р.
+                                </td>
+                            </tr>
+                            <tr className="prices__item-table-tr">
+                                <td className="prices__item-table-td prices__item-table-name">Установка раковины</td>
+                                <td className="prices__item-table-td prices__item-table-price">от 1000р.
+                                </td>
+                            </tr>
+                            <tr className="prices__item-table-tr">
+                                <td className="prices__item-table-td prices__item-table-name">Установка
+                                    полотенцесушителя</td>
+                                <td className="prices__item-table-td prices__item-table-price">от 1000р.
+                                </td>
+                            </tr>
+                            <tr className="prices__item-table-tr">
+                                <td className="prices__item-table-td prices__item-table-name">Установка унитаза</td>
+                                <td className="prices__item-table-td prices__item-table-price">от 1200р.
+                                </td>
+                            </tr>
+                            <tr className="prices__item-table-tr">
+                                <td className="prices__item-table-td prices__item-table-name">Установка ванны</td>
+                                <td className="prices__item-table-td prices__item-table-price">от 1500р.
+                                </td>
+                            </tr>
+                            <tr className="prices__item-table-tr">
+                                <td className="prices__item-table-td prices__item-table-name">Установка душевой кабины
+                                </td>
+                                <td className="prices__item-table-td prices__item-table-price">от 3000р.
+                                </td>
+                            </tr>
+                            <tr className="prices__item-table-tr">
+                                <td className="prices__item-table-td prices__item-table-name">Установка стиральной
+                                    машины</td>
+                                <td className="prices__item-table-td prices__item-table-price">от 700р.
+                                </td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+                    </slide>
+
+                    </ssr-carousel>
+                </div> -->
+            </div>
+        </div>
+
+
+
+        <div className="description">
+            <div className="block__title">
+                <p className="block__title-text">
+                    Ремонт ванных комнат в Санкт-Петергурге
+                </p>
+                <div className="block__title-line"></div>
+            </div>
+
+            <p className="description__text">
+                Ремонт ванной под ключ в Санкт-Петербурге. Ванная комната - одно из необходимых и посещаемых мест в
+                нашем доме. Утром, вставая с постели, мы направляемся в ванную комнату для того, чтобы окончательно
+                пробудиться ото сна, там же, после тяжелого трудового дня мы подготавливаемся к вечернему отдыху.
+                И, несомненно, каждый мечтает о том, чтобы это место релаксации дарило ощущение комфорта и уюта.
+                Немаловажен и тот момент, что когда приходят гости, они, чаще всего первым делом идут в ванную
+                и ее внешний вид во многом определяет впечатление о хозяевах.
+                <br><br>
+                Надежная, шикарная, удобная ванная - результат профессионального ремонта. Наша компания специализируется
+                на ремонте ванных комнат в городе Санкт-Петербурге. Главная задача наших
+                мастеров - выполнить такой ремонт ванной, который долгие годы будет радовать всю Вашу семью,
+                а гости и соседи будут в восторге. <br><br>
+
+                Основные виды работ, выполняемые нами при отделке ванной комнаты: замена старой, приевшейся сантехники,
+                на новую; замена старых электропроводов; гидроизоляция пола и стен ванной комнаты; выравнивание стен;
+                монтаж потолка и установка системы освещения; укладка плитки; установка необходимых сантехнических
+                приборов.
+                <br><br>
+                Каждый этап работы согласовывается с заказчиком, берутся во внимание все его пожелания. Цены наших услуг
+                намного ниже цен конкурирующих фирм, при этом качество выполнения ремонта остается на высшем уровне.
+                Предлагаем нашим заказчикам лучший по всему городу сервис обслуживания.
+                <br><br>
+                Уже приняли решение о ремонте ванной комнаты в Санкт-Петербурге? Звоните нам! Будем рады предоставить
+                исчерпывающие ответы на все Ваши вопросы.
+            </p>
+            <img src="../../assets/img/mark.webp" className="description__img" alt="">
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div className="call">
+            <div className="call__title">
+                <p className="call__title-text">Вызвать замерщика бесплатно </p>
+                <div className="call__line"></div>
+            </div>
+
+            <div className="call__wrapper">
+                <a href="tel:+89500191919
+                " className="call__tel">
+                    <img src="../../assets/img/callimg.webp" className="call__tel-img" alt="">
+                    <p className="call__tel-number"> +8(950) 019 - 19 - 19</p>
+
+
+
+                </a>
+
+                <a href="#" className="call__button-light">Ваш номер телефона</a>
+                <a href="contact.html" className="button call__button">Вызвать замерщика</a>
+            </div>
+        </div>
 
     </div>
 </template>
@@ -794,6 +1286,8 @@
 
 <script>
 import Calculator from '../../components/Calculator.vue'
+
+
 
 export default {
     components: {
@@ -1387,6 +1881,180 @@ export default {
 }
 
 
+
+
+
+.prices {
+  width: 95%;
+  max-width: 1600px;
+  margin: auto;
+  position: relative;
+  padding: 65px 0 150px 0;
+}
+.prices__back {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.prices__container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+.prices__wrapper {
+  margin: 120px 0 0 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap:75px 131px ;
+}
+.prices__item-table {
+ width: 100%;
+  border-spacing:0;
+  margin: auto;
+}
+.prices__item-table-body {
+}
+.prices__item-table-tr {
+
+}
+.prices__item-table-td {
+  border-top: #69303091 1px solid;
+  font-family: 'lato', sans-serif;
+  font-size: 18px;
+  padding: 10px 0;
+line-height: 27px;
+letter-spacing: 0.01em;
+text-align: left;
+
+}
+
+.prices__item-table-title{
+  border: none;
+  font-family: 'garamond', sans-serif;
+  font-size: 40px;
+  color: #2F2F2F;
+  padding: 14px 0 ;
+font-weight: 400;
+line-height: 40px;
+text-align: left;
+
+}
+
+.prices__item-table-name{
+  width: 70%;
+}
+
+
+
+.description {
+  width: 90%;
+  max-width: 1600px;
+  margin: 0 auto 0 auto;
+  position: relative;
+}
+
+.description__img {
+  position: absolute;
+  top: 91px;
+  left: 0;
+  z-index: 0;
+}
+
+.description__text {
+  position: relative;
+  z-index: 1;
+  padding: 120px 0 0 183px;
+  font-family: 'lato', sans-serif;
+  font-size: 20px;
+  color: #3C3D3D;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: 0.04em;
+  text-align: left;
+
+} 
+
+
+
+.call {
+
+  width: 90%;
+  margin:150px auto;
+  background: #F6EDE3;
+  border-radius: 8px;
+  max-width: 1170px;
+  padding: 50px;
+
+}
+
+.call__title {
+  display: grid;
+  width: fit-content;
+}
+
+.call__title-text {
+  font-family: 'garamond', sans-serif;
+  color: #2F2F2F;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 40px;
+
+}
+
+.call__line {
+  width: 161px;
+  height: 1px;
+  justify-self: end;
+  background: #693030;
+  margin: 11px 0 0 0;
+
+}
+
+.call__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 30px 0 0 0;
+}
+
+.call__tel {
+  display: flex;
+  text-decoration: none;
+  align-items: center;
+  gap: 20px;
+}
+
+.call__tel-number {
+  font-family: 'montserrat', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24.38px;
+  letter-spacing: -0.005em;
+  text-align: left;
+  color: #693030;
+
+}
+
+.call__button {
+  border-radius: 15px;
+}
+
+.call__button-light{
+  border-radius: 10px;
+  padding: 18px 50px;
+  background: #FFFFFF;
+  font-family: 'lato', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+  letter-spacing: 0.01em;
+  text-align: center;
+  border: none;
+  text-decoration: none;
+  color: #3C3D3D80;
+  
+}
+
 @media(max-width:769px) {
 
 
@@ -1419,7 +2087,32 @@ export default {
 
     .portfolio__wrapper {
         gap: 20px;
+        margin: 50px 0 0 0;
         grid-template-columns: repeat(1, 1fr);
+    }
+
+    .portfolio__ba-container {
+        font-size: 13px;
+        font-weight: 500;
+        line-height: 19.5px;
+        letter-spacing: 0.01em;
+
+    }
+
+    .button {
+        font-size: 14px;
+        font-weight: 900;
+        line-height: 21px;
+        letter-spacing: 0.01em;
+
+    }
+
+    .portfolio__link-text {
+        font-size: 11px;
+        font-weight: 400;
+        line-height: 16.5px;
+        letter-spacing: 0.01em;
+
     }
 
     .portfolio__item {
@@ -1592,48 +2285,52 @@ export default {
         padding: 80px 0;
     }
 
-    .count-form__container{
+    .count-form__container {
         margin: 50px 0 0 0;
     }
 
-    .count-form__pre-input{
-font-size: 14px;
-font-weight: 400;
-line-height: 21px;
-letter-spacing: 0.01em;
+    .count-form__pre-input {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 21px;
+        letter-spacing: 0.01em;
 
     }
 
-    .count-form__input{
-font-size: 18px;
-font-weight: 400;
-line-height: 27px;
-letter-spacing: 0.01em;
+    .count-form__input {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 27px;
+        letter-spacing: 0.01em;
 
     }
 
-    .specializations__name{
-font-size: 8px;
-font-weight: 500;
-line-height: 12px;
-letter-spacing: 0.01em;
+    .specializations__name {
+        font-size: 8px;
+        font-weight: 500;
+        line-height: 12px;
+        letter-spacing: 0.01em;
 
     }
 
-    .specializations__container{
+    .specializations__container {
         padding: 8px 13px;
     }
 
     .specializations__item {
         padding: 36px 0;
     }
-    .specializations__wrapper{
+
+    .specializations__wrapper {
         grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        margin: 25px 0 0 0;
     }
-    .portfolio__video{
+
+    .portfolio__video {
         width: 100%;
     }
-    .portfolio__item{
+
+    .portfolio__item {
         padding: 40px 10px;
     }
 }

@@ -15,11 +15,13 @@
 
         <div className="calculator__radio-content">
           <label className="calculator__item-radio-wrapper">Совмещённый
-            <input className="calculator__item-radio" type="radio" checked="checked" name="radio">
+            <input className="calculator__item-radio" type="radio" checked="checked" name="radio" v-model="bathType"
+              value="bathType__combinet">
             <span className="calculator__radio-checkmark"></span>
           </label>
           <label className="calculator__item-radio-wrapper">Раздельный
-            <input className="calculator__item-radio" type="radio" name="radio">
+            <input className="calculator__item-radio" type="radio" name="radio" v-model="bathType"
+              value="bathType__separated">
             <span className="calculator__radio-checkmark"></span>
           </label>
         </div>
@@ -29,18 +31,19 @@
         <p className="calculator__item-name">Площадь: </p>
 
         <div className="calculator__square-wrapper">
-          <input type="number" name="number" min="0" className="calculator__square-input" placeholder="4 м2" value="">
+          <input required v-model="bath__square" type="number" name="number" min="0"
+            className="calculator__square-input" placeholder="4 м2" value="">
 
           <div className="calculator__square-arrows">
             <button className="calculator__square-arrow" type="button"
-              @click="this.$el.querySelector('[type=number]').stepUp();">
+              @click="this.$el.querySelector('[type=number]').stepUp(); bath__square++">
               <svg width="9" height="5" viewBox="0 0 9 5" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M1 4L4.5 1L8 4" stroke="#693030" />
               </svg>
 
             </button>
             <button className="calculator__square-arrow" type="button"
-              @click="this.$el.querySelector('[type=number]').stepDown();">
+              @click="this.$el.querySelector('[type=number]').stepDown(); if (bath__square > 0) bath__square--">
               <svg width="9" height="5" viewBox="0 0 9 5" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M1 1L4.5 4L8 1" stroke="#693030" />
               </svg>
@@ -51,17 +54,19 @@
       </div>
 
     </div>
+    <!-- 
+    <h1>{{Number(walls__matherial)  + "    "+ typeof additionalServices+ "    "+typeof floor__matherial+"    "+typeof ceiling__matherial+"    "+typeof bath__square+"    "+typeof bathType}}</h1> -->
 
 
     <div className="calculator__walls">
 
       <div className="calculator__item-wall">
         <p className="calculator__item-name">Материал отделки стен:</p>
-        <select name="Выберите" id="" className="calculator__select" required>
+        <select v-model="walls__matherial" name="Выберите" id="" className="calculator__select" required>
           <option selected disabled className="calculator__default-option" value="">Выберите</option>
-          <option value="" className="calculator__option">Плитка</option>
-          <option value="" className="calculator__option">Керамогранит</option>
-          <option value="" className="calculator__option">Мозаика</option>
+          <option value="200" className="calculator__option">Плитка</option>
+          <option value="350" className="calculator__option">Керамогранит</option>
+          <option value="550" className="calculator__option">Мозаика</option>
 
         </select>
 
@@ -70,10 +75,10 @@
 
       <div className="calculator__item-wall">
         <p className="calculator__item-name">Материал отделки пола:</p>
-        <select name="Выберите" id="" className="calculator__select" required>
+        <select v-model="floor__matherial" name="Выберите" id="" className="calculator__select" required>
           <option selected disabled className="calculator__default-option" value="">Выберите</option>
-          <option value="" className="calculator__option">Плитка</option>
-          <option value="" className="calculator__option">Керамогранит</option>
+          <option value="10" className="calculator__option">Плитка</option>
+          <option value="25" className="calculator__option">Керамогранит</option>
 
         </select>
 
@@ -82,11 +87,11 @@
 
       <div className="calculator__item-wall">
         <p className="calculator__item-name">Материал отделки потолка:</p>
-        <select name="Выберите" id="" className="calculator__select" required>
+        <select v-model="ceiling__matherial" name="Выберите" id="" className="calculator__select" required>
           <option selected disabled className="calculator__default-option" value="">Выберите</option>
-          <option value="" className="calculator__option">Натяжной потолок</option>
-          <option value="" className="calculator__option">Реечный потолок</option>
-          <option value="" className="calculator__option">Панель ПВХ</option>
+          <option value="30" className="calculator__option">Натяжной потолок</option>
+          <option value="45" className="calculator__option">Реечный потолок</option>
+          <option value="55" className="calculator__option">Панель ПВХ</option>
 
         </select>
 
@@ -102,31 +107,31 @@
 
       <div className="calculator__services-wrapper">
         <label className="calculator__services-item">Подвесной унитаз (инсталляция)
-          <input type="checkbox" className="calculator__services-check-box">
+          <input v-model="additionalServices" value="350" type="checkbox" className="calculator__services-check-box">
           <span className="calculator__services-checkmark"></span>
         </label>
         <label className="calculator__services-item">Душевая кабина
-          <input type="checkbox" className="calculator__services-check-box">
+          <input v-model="additionalServices" value="500" type="checkbox" className="calculator__services-check-box">
           <span className="calculator__services-checkmark"></span>
         </label>
         <label className="calculator__services-item">Гигиенический душ (биде)
-          <input type="checkbox" className="calculator__services-check-box">
+          <input v-model="additionalServices" value="300" type="checkbox" className="calculator__services-check-box">
           <span className="calculator__services-checkmark"></span>
         </label>
         <label className="calculator__services-item">Конструкция из ГКП (ниши/полки)
-          <input type="checkbox" className="calculator__services-check-box">
+          <input v-model="additionalServices" value="400" type="checkbox" className="calculator__services-check-box">
           <span className="calculator__services-checkmark"></span>
         </label>
         <label className="calculator__services-item">Теплый пол
-          <input type="checkbox" className="calculator__services-check-box">
+          <input v-model="additionalServices" value="150" type="checkbox" className="calculator__services-check-box">
           <span className="calculator__services-checkmark"></span>
         </label>
         <label className="calculator__services-item">Люк “неведимка” под плитку
-          <input type="checkbox" className="calculator__services-check-box">
+          <input v-model="additionalServices" value="230" type="checkbox" className="calculator__services-check-box">
           <span className="calculator__services-checkmark"></span>
         </label>
         <label className="calculator__services-item">Водонагреватель
-          <input type="checkbox" className="calculator__services-check-box">
+          <input v-model="additionalServices" value="800" type="checkbox" className="calculator__services-check-box">
           <span className="calculator__services-checkmark"></span>
         </label>
       </div>
@@ -146,27 +151,116 @@
           и получите скидку 10 %</p>
 
         <form action="" className="calculator__form">
-          <input required className="calculator__form-input" type="text" placeholder="Ваше имя     ">
-          <input required className="calculator__form-input" type="tel" placeholder="+ 7(___)___-__-__ " name="" id="">
+          <input v-model="calculator__name" required className="calculator__form-input" type="text"
+            placeholder="Ваше имя     ">
+          <input v-model="calculator__tel" required className="calculator__form-input" type="tel"
+            placeholder="+ 7(___)___-__-__ " name="" id="">
 
-          <input type="submit" className="button calculator__button-submit" value="Рассчитать стоимость" name="" id="">
+          <input @click="countPrice()" type="button" className="button calculator__button-submit"
+            value="Рассчитать стоимость" name="" id="">
         </form>
       </div>
     </div>
 
 
 
+    <div className="calculator__error" v-show="error !== ''">
 
+      <div class="calculator__error-container">
+        {{ error }}
+
+        <button class="calculator__error-close-button button" @click="error = ''; isScrollAvailable='true'">Ок</button>
+      </div>
+
+    </div>
+
+
+    <div @click="showResult = false; isScrollAvailable = true" className="calculator__show-result" v-show="showResult">
+
+      <div @click="$event.stopPropagation();" className="calculator__result-container">
+        <p className="calculator__result-title"> Спасибо за заполнение формы, мы скоро с вами свяжемся! </p>
+        Сумма ремонта составляет:<b class="calculator__result-price">{{ additionalServicesTotalPrice }}$</b>
+        <br> <br>
+        Сумма ремонта со скидкой 10%: <b class="calculator__result-price"> {{ additionalServicesTotalPrice * 0.9 }}$</b>
+
+
+
+        <button @click="showResult = false; isScrollAvailable = true" className="calculator__result-close-button">
+          <img src="../assets/img/cross.svg" className="calculator__cross-img" alt="">
+        </button>
+      </div>
+
+
+
+
+    </div>
   </div>
 </template>
 
 
 
 <script>
+
+
 export default {
+  data() {
+    return {
+      bathType: '',
+      bath__square: '',
+      walls__matherial: '',
+      floor__matherial: '',
+      ceiling__matherial: '',
+      additionalServices: [],
+      additionalServicesTotalPrice: 0,
+      calculator__name: '',
+      calculator__tel: '',
+
+      totalPrice: 0,
+
+      error: '',
+
+      showResult: false,
+
+
+      isScrollAvailable: true,
+    }
+  },
 
   methods: {
 
+    countPrice() {
+
+      if (this.walls__matherial === '' || this.bath__square === '' || this.floor__matherial === '' || this.ceiling__matherial === '' || this.calculator__name === '' || this.calculator__tel === '') {
+        this.error = "Необходимо ввести все данные";
+        this.isScrollAvailable = false;
+
+        return;
+
+      }
+
+      this.error = '';
+      this.additionalServicesTotalPrice = this.additionalServices.reduce((acc, el) => acc + Number(el), 0);
+
+
+      this.totalPrice = 100 * this.bath__square + Number(this.walls__matherial) + Number(this.floor__matherial * this.bath__square) + Number(this.ceiling__matherial * this.bath__square) + this.additionalServicesTotalPrice;
+
+      this.showResult = true;
+      this.isScrollAvailable = false;
+    },
+
+
+
+
+
+  },
+  watch: {
+    isScrollAvailable(newValue) {
+      if (newValue) {
+        document.body.style.overflow = 'scroll'; // Разрешить прокрутку
+      } else {
+        document.body.style.overflow = 'hidden'; // Запретить прокрутку
+      }
+    }
   }
 }
 
@@ -185,11 +279,14 @@ export default {
 
 
 
+
 .calculator {
   width: 90%;
   max-width: 1600px;
   margin: auto;
   padding: 0 0 50px 0;
+  position: relative;
+
 }
 
 .calculator__bathroom {
@@ -276,7 +373,7 @@ export default {
 }
 
 .calculator__item-radio-wrapper .calculator__radio-checkmark:after {
-  top: 8%;
+  top: 2px;
   left: 10%;
   background: #693030;
 
@@ -550,11 +647,113 @@ export default {
 }
 
 
+.calculator__error {
+
+
+transition: 0.3s;
+
+position: fixed;
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
+background-color: #00000028;
+display: flex;
+justify-content: center;
+align-items: center;
+
+}
+
+
+.calculator__error-container{
+
+  padding: 30px;
+background: #d0b194;
+font-family: 'lato', sans-serif;
+font-size: 20px;
+font-weight: 400;
+line-height: 24px;
+letter-spacing: 0.01em;
+text-align: center;
+color: #ffffff;
+
+
+}
+
+.calculator__error-close-button{
+  border-radius: 10px;
+  margin: 20px auto 0 auto;
+
+}
+
+
+
+.calculator__show-result {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #00000028;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.calculator__result-container {
+  padding: 40px;
+  position: relative;
+  background: #d0b194;
+
+  font-family: 'montserrat', sans-serif;
+  font-size: 26px;
+font-weight: 400;
+  color: #ffffff;
+  line-height: 27px;
+
+letter-spacing: 0.01em;
+text-align: left;
+
+max-width: 700px;
+
+
+}
+
+.calculator__result-title{
+  font-family: 'garamond', sans-serif;
+  font-size: 50px;
+  color: #ffffff;
+font-weight: 400;
+line-height: 50px;
+text-align: center;
+margin: 0 0 40px 0;
+
+}
+
+.calculator__result-price{
+  margin: 0 0 0 10px;
+}
+
+.calculator__result-close-button{
+  background-color: transparent;
+  border: none;
+  outline: none;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  cursor: pointer;
+}
+.calculator__cross-img{
+  width: 100%;
+  height: 100%;
+}
 
 
 
 @media(max-width:769px) {
- 
+
   .calculator__bathroom-radio {
     flex-direction: column;
     align-items: start;
@@ -577,7 +776,7 @@ export default {
     gap: 15px;
     margin: 50px 0 25px 0;
     width: 90%;
-    margin: 50px  auto 25px auto;
+    margin: 50px auto 25px auto;
   }
 
   .calculator__walls {
@@ -587,39 +786,46 @@ export default {
 
 }
 
-@media(max-width: 426px){
+@media(max-width: 426px) {
   .block__title-text {
-        font-size: 25px;
-        font-weight: 400;
-        line-height: 25px;
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 25px;
 
-    }
-  .calculator{
+  }
+
+  .calculator {
     width: 100%;
   }
-  .calculator__form-title{
-    width: 90%;
-    margin:0 auto 25px auto;
-  }
-.calculator__form-prev{
-  width: 90%;
-  max-width: none;
 
-  margin: auto;
-}
-  .calculator__form-wrapper{
+  .calculator__form-title {
+    width: 90%;
+    margin: 0 auto 25px auto;
+  }
+
+  .calculator__form-prev {
+    width: 90%;
+    max-width: none;
+
+    margin: auto;
+  }
+
+  .calculator__form-wrapper {
     border-radius: 0;
     padding: 0;
     background: #fff;
   }
-  .calculator__form{
+
+  .calculator__form {
     background: #F6EDE3;
-padding: 35px;
+    padding: 35px;
   }
-  .calculator__item-name{
+
+  .calculator__item-name {
     font-size: 16px;
   }
-  .calculator__square-input{
+
+  .calculator__square-input {
     max-width: 149px;
   }
 }

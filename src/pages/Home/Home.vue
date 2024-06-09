@@ -987,19 +987,19 @@
                         </tbody>
 
                     </table>
-
-
-
                 </div>
 
 
-                <!-- <div className="prices__slider">
-                    <ssr-carousel >
+               
 
 
-                        <slide :key="1">
-                            
-                    <table className="prices__item-table">
+                <div className="prices__slider slider" @touchstart="onTouchStart" @touchmove="onTouchMove"
+                    @touchend="onTouchEnd">
+
+
+
+                    <table  ref="slides" className="prices__item-table slide" 
+                        :style="{ transform: `translateX(-${currentSlide * 100}%)` }">
                         <tbody className="prices__item-table-body">
                             <tr className="prices__item-table-tr ">
                                 <td className="prices__item-table-td prices__item-table-title" colspan="2">Отделка стен
@@ -1042,12 +1042,11 @@
                         </tbody>
 
                     </table>
-                        </slide>
 
 
-                    <slide :key="2">
 
-                        <table className="prices__item-table">
+                    <table  ref="slides" className="prices__item-table slide" 
+                        :style="{ transform: `translateX(-${currentSlide * 100}%)` }">
                         <tbody className="prices__item-table-body">
                             <tr className="prices__item-table-tr ">
                                 <td className="prices__item-table-td prices__item-table-title" colspan="2">Отделка
@@ -1092,11 +1091,9 @@
 
                     </table>
 
-                    </slide>
 
-                    <slide :key="3">
-                        
-                    <table className="prices__item-table">
+                    <table  ref="slides" className="prices__item-table slide" 
+                        :style="{ transform: `translateX(-${currentSlide * 100}%)` }">
                         <tbody className="prices__item-table-body">
                             <tr className="prices__item-table-tr ">
                                 <td className="prices__item-table-td prices__item-table-title" colspan="2">
@@ -1143,11 +1140,11 @@
                         </tbody>
 
                     </table>
-                    </slide>
 
-                    <slide :key="4">
-                        
-                    <table className="prices__item-table">
+
+                    <table  ref="slides" className="prices__item-table slide" 
+                        :style="{ transform: `translateX(-${currentSlide * 100}%)` }">
+
                         <tbody className="prices__item-table-body">
                             <tr className="prices__item-table-tr ">
                                 <td className="prices__item-table-td prices__item-table-title" colspan="2">
@@ -1194,10 +1191,8 @@
                         </tbody>
 
                     </table>
-                    </slide>
 
-                    </ssr-carousel>
-                </div> -->
+                </div>
             </div>
         </div>
 
@@ -1310,10 +1305,23 @@ export default {
     },
     data() {
         return {
-            showMobilePortfolioText: false
+            showMobilePortfolioText: false,
+            currentSlide: 0,
+            touchStartX: 0,
+            touchEndX: 0,
+           
         };
     },
-
+    computed: {
+        slideContent() {
+      if (this.$refs.slides) {
+        return Array.from(this.$refs.slides).map(slide => slide);
+      } else {
+        console.log('nnoooo')
+        return [];
+      }
+    }
+    },
     created() {
         this.checkSize();
         window.addEventListener('resize', this.checkSize)
@@ -1321,8 +1329,30 @@ export default {
     methods: {
         checkSize() {
             this.showMobilePortfolioText = innerWidth < 769
-        }
+        },
+        onTouchStart(event) {
+            this.touchStartX = event.touches[0].clientX;
+        },
+        onTouchMove(event) {
+            this.touchEndX = event.touches[0].clientX;
+        },
+        onTouchEnd() {
+    const diffX = this.touchEndX - this.touchStartX;
+
+    if (diffX > 0) {
+        this.currentSlide = Math.max(0, this.currentSlide - 1);
+    } else if (diffX < 0) {
+        this.currentSlide++;
     }
+
+    if (this.currentSlide >= 300) {
+        this.currentSlide = 0;
+    }
+}
+
+
+    },
+    
 
 }
 </script>
@@ -1339,8 +1369,9 @@ export default {
 @import "../../assets/main.css";
 
 
-
-
+.prices__slider {
+    display: none;
+}
 
 .main {
 
@@ -1885,174 +1916,183 @@ export default {
 
 
 .prices {
-  width: 95%;
-  max-width: 1600px;
-  margin: auto;
-  position: relative;
-  padding: 65px 0 150px 0;
+    width: 95%;
+    max-width: 1600px;
+    margin: auto;
+    position: relative;
+    padding: 65px 0 150px 0;
 }
+
 .prices__back {
-  position: absolute;
-  top: 0;
-  left: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
+
 .prices__container {
-  width: 90%;
-  max-width: 1200px;
-  margin: auto;
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
 }
+
 .prices__wrapper {
-  margin: 120px 0 0 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap:75px 131px ;
+    margin: 120px 0 0 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 75px 131px;
 }
+
 .prices__item-table {
- width: 100%;
-  border-spacing:0;
-  margin: auto;
+    width: 100%;
+    border-spacing: 0;
+    margin: auto;
 }
-.prices__item-table-body {
-}
-.prices__item-table-tr {
 
-}
+.prices__item-table-body {}
+
+.prices__item-table-tr {}
+
 .prices__item-table-td {
-  border-top: #69303091 1px solid;
-  font-family: 'lato', sans-serif;
-  font-size: 18px;
-  padding: 10px 0;
-line-height: 27px;
-letter-spacing: 0.01em;
-text-align: left;
+    border-top: #69303091 1px solid;
+    font-family: 'lato', sans-serif;
+    font-size: 18px;
+    padding: 10px 0;
+    line-height: 27px;
+    letter-spacing: 0.01em;
+    text-align: left;
 
 }
 
-.prices__item-table-title{
-  border: none;
-  font-family: 'garamond', sans-serif;
-  font-size: 40px;
-  color: #2F2F2F;
-  padding: 14px 0 ;
-font-weight: 400;
-line-height: 40px;
-text-align: left;
+.prices__item-table-title {
+    border: none;
+    font-family: 'garamond', sans-serif;
+    font-size: 40px;
+    color: #2F2F2F;
+    padding: 14px 0;
+    font-weight: 400;
+    line-height: 40px;
+    text-align: left;
 
 }
 
-.prices__item-table-name{
-  width: 70%;
+.prices__item-table-name {
+    width: 70%;
 }
 
 
 
 .description {
-  width: 90%;
-  max-width: 1600px;
-  margin: 0 auto 0 auto;
-  position: relative;
+    width: 90%;
+    max-width: 1600px;
+    margin: 0 auto 0 auto;
+    position: relative;
 }
 
 .description__img {
-  position: absolute;
-  top: 91px;
-  left: 0;
-  z-index: 0;
+    position: absolute;
+    top: 91px;
+    left: 0;
+    z-index: 0;
 }
 
 .description__text {
-  position: relative;
-  z-index: 1;
-  padding: 120px 0 0 183px;
-  font-family: 'lato', sans-serif;
-  font-size: 20px;
-  color: #3C3D3D;
-  font-weight: 400;
-  line-height: 30px;
-  letter-spacing: 0.04em;
-  text-align: left;
+    position: relative;
+    z-index: 1;
+    padding: 120px 0 0 183px;
+    font-family: 'lato', sans-serif;
+    font-size: 20px;
+    color: #3C3D3D;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: 0.04em;
+    text-align: left;
 
-} 
+}
 
 
 
 .call {
 
-  width: 90%;
-  margin:150px auto;
-  background: #F6EDE3;
-  border-radius: 8px;
-  max-width: 1170px;
-  padding: 50px;
+    width: 90%;
+    margin: 150px auto;
+    background: #F6EDE3;
+    border-radius: 8px;
+    max-width: 1170px;
+    padding: 50px;
 
 }
 
 .call__title {
-  display: grid;
-  width: fit-content;
+    display: grid;
+    width: fit-content;
 }
 
 .call__title-text {
-  font-family: 'garamond', sans-serif;
-  color: #2F2F2F;
-  font-size: 40px;
-  font-weight: 400;
-  line-height: 40px;
+    font-family: 'garamond', sans-serif;
+    color: #2F2F2F;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 40px;
 
 }
 
 .call__line {
-  width: 161px;
-  height: 1px;
-  justify-self: end;
-  background: #693030;
-  margin: 11px 0 0 0;
+    width: 161px;
+    height: 1px;
+    justify-self: end;
+    background: #693030;
+    margin: 11px 0 0 0;
 
 }
 
 .call__wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 30px 0 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 0 0 0;
 }
 
 .call__tel {
-  display: flex;
-  text-decoration: none;
-  align-items: center;
-  gap: 20px;
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+    gap: 20px;
 }
 
 .call__tel-number {
-  font-family: 'montserrat', sans-serif;
-  font-size: 20px;
-  font-weight: 700;
-  line-height: 24.38px;
-  letter-spacing: -0.005em;
-  text-align: left;
-  color: #693030;
+    font-family: 'montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24.38px;
+    letter-spacing: -0.005em;
+    text-align: left;
+    color: #693030;
 
 }
 
 .call__button {
-  border-radius: 15px;
+    border-radius: 15px;
 }
 
-.call__button-light{
-  border-radius: 10px;
-  padding: 18px 50px;
-  background: #FFFFFF;
-  font-family: 'lato', sans-serif;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 27px;
-  letter-spacing: 0.01em;
-  text-align: center;
-  border: none;
-  text-decoration: none;
-  color: #3C3D3D80;
-  
+.call__button-light {
+    border-radius: 10px;
+    padding: 18px 50px;
+    background: #FFFFFF;
+    font-family: 'lato', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: 0.01em;
+    text-align: center;
+    border: none;
+    text-decoration: none;
+    color: #3C3D3D80;
+
+}
+
+.block__title{
+    position: relative;
+    z-index: 1;
 }
 
 @media(max-width:769px) {
@@ -2182,8 +2222,38 @@ text-align: left;
 
 
 
+    .description__text{
+        padding: 40px 0 0 0;
+    }
+.prices__container{
+    overflow: hidden;
+}
+    .slider {
+  display: grid !important;
+  overflow: hidden  !important;
+  width: 3000px;
+  grid-template-columns: repeat(4,1fr);
+
+}
+
+.slide {
+  flex: 1 !important;
+  height: 100%;
+
+  width: 100% !important;
+  transition: transform 0.5s !important;
+}
 
 
+    .prices__wrapper-desctop{
+        display: none;
+    }
+    .prices__slider {
+        display:flex ;
+    }
+    .slider{
+        display: flex;
+    }
 
 
 }
@@ -2191,6 +2261,7 @@ text-align: left;
 
 
 @media(max-width:426px) {
+
     .main__offer-text {
         font-size: 20px;
         font-weight: 700;
@@ -2254,6 +2325,7 @@ text-align: left;
 
     }
 
+
     .why-us__link {
         margin: 21px auto 0 auto;
     }
@@ -2278,6 +2350,7 @@ text-align: left;
         font-size: 25px;
         font-weight: 400;
         line-height: 25px;
+
 
     }
 

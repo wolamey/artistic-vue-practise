@@ -151,7 +151,7 @@
           и получите скидку 10 %</p>
 
         <form action="" className="calculator__form">
-          <input v-model="calculator__name" required className="calculator__form-input" type="text"
+          <input v-model="calculator__name" @paste="$event.preventDefault()" required className="calculator__form-input" @keypress="noDigits($event)" type="name"
             placeholder="Ваше имя     ">
           <input v-model="calculator__tel" required className="calculator__form-input" type="tel"
             placeholder="+ 7(___)___-__-__ " name="" id="">
@@ -169,7 +169,7 @@
       <div class="calculator__error-container">
         {{ error }}
 
-        <button class="calculator__error-close-button button" @click="error = ''; isScrollAvailable='true'">Ок</button>
+        <button class="calculator__error-close-button button" @click="error = ''; isScrollAvailable = 'true'">Ок</button>
       </div>
 
     </div>
@@ -178,7 +178,7 @@
     <div @click="showResult = false; isScrollAvailable = true" className="calculator__show-result" v-show="showResult">
 
       <div @click="$event.stopPropagation();" className="calculator__result-container">
-        <p className="calculator__result-title"> Спасибо за заполнение формы, мы скоро с вами свяжемся! </p>
+        <p className="calculator__result-title">Добрый день, {{ calculator__name }}, cпасибо за заполнение формы, мы скоро с вами свяжемся! </p>
         Сумма ремонта составляет:<b class="calculator__result-price">{{ additionalServicesTotalPrice }}$</b>
         <br> <br>
         Сумма ремонта со скидкой 10%: <b class="calculator__result-price"> {{ additionalServicesTotalPrice * 0.9 }}$</b>
@@ -223,6 +223,9 @@ export default {
 
 
       isScrollAvailable: true,
+      telRegex: /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/,
+
+
     }
   },
 
@@ -236,7 +239,15 @@ export default {
 
         return;
 
+      } else if (!this.telRegex.test(this.calculator__tel)) {
+        this.error = "Пожалуйста, введите корректный номер телефона ";
+        this.isScrollAvailable = false;
+        return;
       }
+
+  
+
+
 
       this.error = '';
       this.additionalServicesTotalPrice = this.additionalServices.reduce((acc, el) => acc + Number(el), 0);
@@ -247,7 +258,10 @@ export default {
       this.showResult = true;
       this.isScrollAvailable = false;
     },
-
+    noDigits(event) {
+      if ("1234567890".indexOf(event.key) != -1)
+        event.preventDefault();
+    }
 
 
 
@@ -650,37 +664,37 @@ export default {
 .calculator__error {
 
 
-transition: 0.3s;
+  transition: 0.3s;
 
-position: fixed;
-top: 0;
-right: 0;
-bottom: 0;
-left: 0;
-background-color: #00000028;
-display: flex;
-justify-content: center;
-align-items: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #00000028;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
 }
 
 
-.calculator__error-container{
+.calculator__error-container {
 
   padding: 30px;
-background: #d0b194;
-font-family: 'lato', sans-serif;
-font-size: 20px;
-font-weight: 400;
-line-height: 24px;
-letter-spacing: 0.01em;
-text-align: center;
-color: #ffffff;
+  background: #d0b194;
+  font-family: 'lato', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.01em;
+  text-align: center;
+  color: #ffffff;
 
 
 }
 
-.calculator__error-close-button{
+.calculator__error-close-button {
   border-radius: 10px;
   margin: 20px auto 0 auto;
 
@@ -700,6 +714,7 @@ color: #ffffff;
   align-items: center;
 
 }
+
 .calculator__result-container {
   padding: 40px;
   position: relative;
@@ -707,34 +722,34 @@ color: #ffffff;
 
   font-family: 'montserrat', sans-serif;
   font-size: 26px;
-font-weight: 400;
+  font-weight: 400;
   color: #ffffff;
   line-height: 27px;
 
-letter-spacing: 0.01em;
-text-align: left;
+  letter-spacing: 0.01em;
+  text-align: left;
 
-max-width: 700px;
+  max-width: 700px;
 
 
 }
 
-.calculator__result-title{
+.calculator__result-title {
   font-family: 'garamond', sans-serif;
   font-size: 50px;
   color: #ffffff;
-font-weight: 400;
-line-height: 50px;
-text-align: center;
-margin: 0 0 40px 0;
+  font-weight: 400;
+  line-height: 50px;
+  text-align: center;
+  margin: 0 0 40px 0;
 
 }
 
-.calculator__result-price{
+.calculator__result-price {
   margin: 0 0 0 10px;
 }
 
-.calculator__result-close-button{
+.calculator__result-close-button {
   background-color: transparent;
   border: none;
   outline: none;
@@ -745,7 +760,8 @@ margin: 0 0 40px 0;
   right: -50px;
   cursor: pointer;
 }
-.calculator__cross-img{
+
+.calculator__cross-img {
   width: 100%;
   height: 100%;
 }

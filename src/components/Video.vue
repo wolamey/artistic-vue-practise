@@ -56,6 +56,8 @@ export default {
     z-index: 2;
 }
 
+
+
 .video__close-button {
     width: 15px;
     height: 15px;
@@ -92,6 +94,7 @@ cursor: pointer;
 .video__iframe {
     width: 100%;
     height: 100%;
+    border-radius: 16px;
 
 }
 </style>

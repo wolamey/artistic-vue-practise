@@ -990,7 +990,7 @@
                 </div>
 
 
-               
+
 
 
                 <div className="prices__slider slider" @touchstart="onTouchStart" @touchmove="onTouchMove"
@@ -998,7 +998,7 @@
 
 
 
-                    <table  ref="slides" className="prices__item-table slide" 
+                    <table ref="slides" className="prices__item-table slide"
                         :style="{ transform: `translateX(-${currentSlide * 100}%)` }">
                         <tbody className="prices__item-table-body">
                             <tr className="prices__item-table-tr ">
@@ -1045,7 +1045,51 @@
 
 
 
-                    <table  ref="slides" className="prices__item-table slide" 
+                    <table ref="slides" className="prices__item-table slide"
+                        :style="{ transform: `translateX(-${currentSlide * 100}%)` }">
+                        <tbody className="prices__item-table-body">
+                            <tr className="prices__item-table-tr ">
+                                <td className="prices__item-table-td prices__item-table-title" colspan="2">Штукатурка
+                                    стен</td>
+                            </tr>
+                            <tr className="prices__item-table-tr">
+                                <td className="prices__item-table-td prices__item-table-name">Утепление пола</td>
+                                <td className="prices__item-table-td prices__item-table-price">от 300р. кв.м
+                                </td>
+                            </tr>
+                            <tr className="prices__item-table-tr">
+                                <td className="prices__item-table-td prices__item-table-name">Укладка керамогранита</td>
+                                <td className="prices__item-table-td prices__item-table-price">от 550р. кв.м
+                                </td>
+                            </tr>
+                            <tr className="prices__item-table-tr">
+                                <td className="prices__item-table-td prices__item-table-name">Облицовка природным камнем
+                                </td>
+                                <td className="prices__item-table-td prices__item-table-price">от 900р. кв.м
+                                </td>
+                            </tr>
+                            <tr className="prices__item-table-tr">
+                                <td className="prices__item-table-td prices__item-table-name">Укладка плитки на пол</td>
+                                <td className="prices__item-table-td prices__item-table-price">от 450р. кв.м
+                                </td>
+                            </tr>
+                            <tr className="prices__item-table-tr">
+                                <td className="prices__item-table-td prices__item-table-name">Стяжка пола</td>
+                                <td className="prices__item-table-td prices__item-table-price">от 350р. кв.м
+                                </td>
+                            </tr>
+                            <tr className="prices__item-table-tr">
+                                <td className="prices__item-table-td prices__item-table-name">Гидроизоляция пола</td>
+                                <td className="prices__item-table-td prices__item-table-price">от 180. кв.м
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+
+                    <table ref="slides" className="prices__item-table slide"
                         :style="{ transform: `translateX(-${currentSlide * 100}%)` }">
                         <tbody className="prices__item-table-body">
                             <tr className="prices__item-table-tr ">
@@ -1092,57 +1136,7 @@
                     </table>
 
 
-                    <table  ref="slides" className="prices__item-table slide" 
-                        :style="{ transform: `translateX(-${currentSlide * 100}%)` }">
-                        <tbody className="prices__item-table-body">
-                            <tr className="prices__item-table-tr ">
-                                <td className="prices__item-table-td prices__item-table-title" colspan="2">
-                                    Сантехника/электрика</td>
-                            </tr>
-                            <tr className="prices__item-table-tr">
-                                <td className="prices__item-table-td prices__item-table-name">Установка смесителя</td>
-                                <td className="prices__item-table-td prices__item-table-price">от 500р.
-                                </td>
-                            </tr>
-                            <tr className="prices__item-table-tr">
-                                <td className="prices__item-table-td prices__item-table-name">Установка раковины</td>
-                                <td className="prices__item-table-td prices__item-table-price">от 1000р.
-                                </td>
-                            </tr>
-                            <tr className="prices__item-table-tr">
-                                <td className="prices__item-table-td prices__item-table-name">Установка
-                                    полотенцесушителя</td>
-                                <td className="prices__item-table-td prices__item-table-price">от 1000р.
-                                </td>
-                            </tr>
-                            <tr className="prices__item-table-tr">
-                                <td className="prices__item-table-td prices__item-table-name">Установка унитаза</td>
-                                <td className="prices__item-table-td prices__item-table-price">от 1200р.
-                                </td>
-                            </tr>
-                            <tr className="prices__item-table-tr">
-                                <td className="prices__item-table-td prices__item-table-name">Установка ванны</td>
-                                <td className="prices__item-table-td prices__item-table-price">от 1500р.
-                                </td>
-                            </tr>
-                            <tr className="prices__item-table-tr">
-                                <td className="prices__item-table-td prices__item-table-name">Установка душевой кабины
-                                </td>
-                                <td className="prices__item-table-td prices__item-table-price">от 3000р.
-                                </td>
-                            </tr>
-                            <tr className="prices__item-table-tr">
-                                <td className="prices__item-table-td prices__item-table-name">Установка стиральной
-                                    машины</td>
-                                <td className="prices__item-table-td prices__item-table-price">от 700р.
-                                </td>
-                            </tr>
-                        </tbody>
-
-                    </table>
-
-
-                    <table  ref="slides" className="prices__item-table slide" 
+                    <table ref="slides" className="prices__item-table slide"
                         :style="{ transform: `translateX(-${currentSlide * 100}%)` }">
 
                         <tbody className="prices__item-table-body">
@@ -1191,6 +1185,12 @@
                         </tbody>
 
                     </table>
+
+
+                    <div class="prices__pagination">
+                        <span v-for="(slide, index) in slideContent" :key="index"
+                            :class="{ 'active': currentSlide === index }" @click="currentSlide = index"></span>
+                    </div>
 
                 </div>
             </div>
@@ -1207,8 +1207,11 @@
             </div>
 
             <p className="description__text">
-                Ремонт ванной под ключ в Санкт-Петербурге. Ванная комната - одно из необходимых и посещаемых мест в
-                нашем доме. Утром, вставая с постели, мы направляемся в ванную комнату для того, чтобы окончательно
+                Ванная комната - одно из необходимых и посещаемых мест в
+                нашем доме. Утром, вставая с постели, мы направляемся в ванную<span class="description__text" v-if="!isDescriptionSeen">... 
+                    
+                    <button class="description__show-more" @click="isDescriptionSeen=true"><img src="../../assets/img/description-arrow.png" alt=""></button>
+                    </span> <span @click="showLess()" class="description__text" v-if="isDescriptionSeen">комнату для того, чтобы окончательно
                 пробудиться ото сна, там же, после тяжелого трудового дня мы подготавливаемся к вечернему отдыху.
                 И, несомненно, каждый мечтает о том, чтобы это место релаксации дарило ощущение комфорта и уюта.
                 Немаловажен и тот момент, что когда приходят гости, они, чаще всего первым делом идут в ванную
@@ -1229,7 +1232,7 @@
                 Предлагаем нашим заказчикам лучший по всему городу сервис обслуживания.
                 <br><br>
                 Уже приняли решение о ремонте ванной комнаты в Санкт-Петербурге? Звоните нам! Будем рады предоставить
-                исчерпывающие ответы на все Ваши вопросы.
+                исчерпывающие ответы на все Ваши вопросы.</span> 
             </p>
             <img src="../../assets/img/mark.webp" className="description__img" alt="">
         </div>
@@ -1283,7 +1286,6 @@
 import Calculator from '../../components/Calculator.vue'
 
 
-
 export default {
     components: {
         Calculator,
@@ -1309,26 +1311,28 @@ export default {
             currentSlide: 0,
             touchStartX: 0,
             touchEndX: 0,
-           
+            isDescriptionSeen: true,
+
         };
     },
     computed: {
         slideContent() {
-      if (this.$refs.slides) {
-        return Array.from(this.$refs.slides).map(slide => slide);
-      } else {
-        console.log('nnoooo')
-        return [];
-      }
-    }
+            const slides = [1,2,3,4];
+            return slides
+        }
     },
     created() {
         this.checkSize();
-        window.addEventListener('resize', this.checkSize)
+        window.addEventListener('resize', this.checkSize);
+        window.addEventListener('resize', this.showDescription);
+
     },
     methods: {
         checkSize() {
             this.showMobilePortfolioText = innerWidth < 769
+        },
+        showDescription(){
+            this.isDescriptionSeen = innerWidth >= 425
         },
         onTouchStart(event) {
             this.touchStartX = event.touches[0].clientX;
@@ -1337,22 +1341,38 @@ export default {
             this.touchEndX = event.touches[0].clientX;
         },
         onTouchEnd() {
-    const diffX = this.touchEndX - this.touchStartX;
+            const diffX = this.touchEndX - this.touchStartX;
 
-    if (diffX > 0) {
-        this.currentSlide = Math.max(0, this.currentSlide - 1);
-    } else if (diffX < 0) {
-        this.currentSlide++;
-    }
+            if (diffX > 0) {
+                this.currentSlide = Math.max(0, this.currentSlide - 1);
+            } else if (diffX < 0) {
+                this.currentSlide++;
+            }
 
-    if (this.currentSlide >= 300) {
-        this.currentSlide = 0;
-    }
-}
+            if (this.currentSlide >= 4) {
+                this.currentSlide = 0;
+            }
+            if (this.currentSlide <= 0 && diffX > 0) {
+                this.currentSlide = 3
+            }
+
+
+
+        },
+        showLess(){
+            if(innerWidth <= 425){
+                this.isDescriptionSeen=false
+            }
+        }
+
+
+
 
 
     },
-    
+
+
+
 
 }
 </script>
@@ -1368,6 +1388,48 @@ export default {
 @import "../../assets/fonts/fonts.css";
 @import "../../assets/main.css";
 
+.description__show-more{
+    background: none;
+    border: none;
+}
+
+.prices__pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  gap:6px;
+  width: fit-content;
+  margin: 20px auto 0 auto;
+}
+
+.prices__pagination  span {
+    background: #FCEAD9;
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.prices__pagination span.active {
+    background: #C5B19D;
+}
+
+
+.prices__slider-points {
+    display: flex;
+    gap: 6px;
+    width: fit-content;
+    margin: auto;
+    height: 8px;
+    align-items: center;
+}
+
+.prices__point {
+    background: #FCEAD9;
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+}
 
 .prices__slider {
     display: none;
@@ -2050,6 +2112,9 @@ export default {
     justify-content: space-between;
     align-items: center;
     margin: 30px 0 0 0;
+    flex-wrap: wrap;
+    gap: 20px;
+
 }
 
 .call__tel {
@@ -2072,6 +2137,7 @@ export default {
 
 .call__button {
     border-radius: 15px;
+    margin:0;
 }
 
 .call__button-light {
@@ -2090,12 +2156,14 @@ export default {
 
 }
 
-.block__title{
+.block__title {
     position: relative;
     z-index: 1;
 }
 
 @media(max-width:769px) {
+
+
 
 
     .count-form__img {
@@ -2222,38 +2290,43 @@ export default {
 
 
 
-    .description__text{
+    .description__text {
         padding: 40px 0 0 0;
     }
-.prices__container{
+
+    .prices__container {
     overflow: hidden;
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
 }
-    .slider {
-  display: grid !important;
-  overflow: hidden  !important;
-  width: 3000px;
-  grid-template-columns: repeat(4,1fr);
+
+.slider {
+    display: grid !important;
+    overflow: hidden !important;
+    width: 400%; /* изменено */
+    grid-template-columns: repeat(4, 25%); /* изменено */
 
 }
 
 .slide {
-  flex: 1 !important;
-  height: 100%;
-
-  width: 100% !important;
-  transition: transform 0.5s !important;
+    flex: 1 !important;
+    height: 100%;
+    width: 100% !important;
+    transition: transform 0.5s !important;
 }
 
+.prices__wrapper-desctop {
+    display: none;
+}
 
-    .prices__wrapper-desctop{
-        display: none;
-    }
-    .prices__slider {
-        display:flex ;
-    }
-    .slider{
-        display: flex;
-    }
+.prices__slider {
+    display: flex;
+}
+
+.slider {
+    display: flex;
+}
 
 
 }
@@ -2405,6 +2478,58 @@ export default {
 
     .portfolio__item {
         padding: 40px 10px;
+    }
+    .block__title-text{
+font-size: 25px;
+font-weight: 400;
+line-height: 25px;
+
+
+    }
+
+    .slider{
+        margin:20px 0 0 0 
+    }
+    
+    .call__title-text{
+        text-align: center;
+font-size: 24px;
+font-weight: 400;
+line-height: 24px;
+
+    }
+    .prices__item-table-title{
+font-size: 24px;
+font-weight: 400;
+line-height: 24px;
+text-align: left;
+
+    }
+
+    .prices__item-table-name{
+font-size: 13px;
+font-weight: 400;
+line-height: 19.5px;
+letter-spacing: 0.01em;
+
+    }
+    .prices__item-table-price{
+font-size: 13px;
+font-weight: 600;
+line-height: 19.5px;
+letter-spacing: 0.01em;
+
+    }
+    .description__text{
+font-size: 13px;
+font-weight: 400;
+line-height: 19.5px;
+letter-spacing: 0.03em;
+text-align: left;
+
+    }
+    .description__img{
+        display: none;
     }
 }
 </style>

@@ -782,7 +782,7 @@
         <Calculator />
 
 
-        <div className="prices">
+        <div id="prices" className="prices">
             <img src="./../../assets/img/prices__back.png" className="prices__back" alt="">
             <div className="prices__container">
                 <div className="block__title">
@@ -1187,9 +1187,9 @@
                     </table>
 
 
-                    <div class="prices__pagination">
-                        <span v-for="(slide, index) in slideContent" :key="index"
-                            :class="{ 'active': currentSlide === index }" @click="currentSlide = index"></span>
+                    <div className="prices__pagination">
+                        <span v-for=" index in slideContent" :key="index"
+                            :className="{ 'active': currentSlide === index }" @click="currentSlide = index"></span>
                     </div>
 
                 </div>
@@ -1208,31 +1208,40 @@
 
             <p className="description__text">
                 Ванная комната - одно из необходимых и посещаемых мест в
-                нашем доме. Утром, вставая с постели, мы направляемся в ванную<span class="description__text" v-if="!isDescriptionSeen">... 
-                    
-                    <button class="description__show-more" @click="isDescriptionSeen=true"><img src="../../assets/img/description-arrow.png" alt=""></button>
-                    </span> <span @click="showLess()" class="description__text" v-if="isDescriptionSeen">комнату для того, чтобы окончательно
-                пробудиться ото сна, там же, после тяжелого трудового дня мы подготавливаемся к вечернему отдыху.
-                И, несомненно, каждый мечтает о том, чтобы это место релаксации дарило ощущение комфорта и уюта.
-                Немаловажен и тот момент, что когда приходят гости, они, чаще всего первым делом идут в ванную
-                и ее внешний вид во многом определяет впечатление о хозяевах.
-                <br><br>
-                Надежная, шикарная, удобная ванная - результат профессионального ремонта. Наша компания специализируется
-                на ремонте ванных комнат в городе Санкт-Петербурге. Главная задача наших
-                мастеров - выполнить такой ремонт ванной, который долгие годы будет радовать всю Вашу семью,
-                а гости и соседи будут в восторге. <br><br>
+                нашем доме. Утром, вставая с постели, мы направляемся в ванную<span className="description__text"
+                    v-if="!isDescriptionSeen">...
 
-                Основные виды работ, выполняемые нами при отделке ванной комнаты: замена старой, приевшейся сантехники,
-                на новую; замена старых электропроводов; гидроизоляция пола и стен ванной комнаты; выравнивание стен;
-                монтаж потолка и установка системы освещения; укладка плитки; установка необходимых сантехнических
-                приборов.
-                <br><br>
-                Каждый этап работы согласовывается с заказчиком, берутся во внимание все его пожелания. Цены наших услуг
-                намного ниже цен конкурирующих фирм, при этом качество выполнения ремонта остается на высшем уровне.
-                Предлагаем нашим заказчикам лучший по всему городу сервис обслуживания.
-                <br><br>
-                Уже приняли решение о ремонте ванной комнаты в Санкт-Петербурге? Звоните нам! Будем рады предоставить
-                исчерпывающие ответы на все Ваши вопросы.</span> 
+                    <button className="description__show-more" @click="isDescriptionSeen = true"><img
+                            src="../../assets/img/description-arrow.png" alt=""></button>
+                </span> <span @click="showLess()" className="description__text" v-if="isDescriptionSeen">комнату для
+                    того,
+                    чтобы окончательно
+                    пробудиться ото сна, там же, после тяжелого трудового дня мы подготавливаемся к вечернему отдыху.
+                    И, несомненно, каждый мечтает о том, чтобы это место релаксации дарило ощущение комфорта и уюта.
+                    Немаловажен и тот момент, что когда приходят гости, они, чаще всего первым делом идут в ванную
+                    и ее внешний вид во многом определяет впечатление о хозяевах.
+                    <br><br>
+                    Надежная, шикарная, удобная ванная - результат профессионального ремонта. Наша компания
+                    специализируется
+                    на ремонте ванных комнат в городе Санкт-Петербурге. Главная задача наших
+                    мастеров - выполнить такой ремонт ванной, который долгие годы будет радовать всю Вашу семью,
+                    а гости и соседи будут в восторге. <br><br>
+
+                    Основные виды работ, выполняемые нами при отделке ванной комнаты: замена старой, приевшейся
+                    сантехники,
+                    на новую; замена старых электропроводов; гидроизоляция пола и стен ванной комнаты; выравнивание
+                    стен;
+                    монтаж потолка и установка системы освещения; укладка плитки; установка необходимых сантехнических
+                    приборов.
+                    <br><br>
+                    Каждый этап работы согласовывается с заказчиком, берутся во внимание все его пожелания. Цены наших
+                    услуг
+                    намного ниже цен конкурирующих фирм, при этом качество выполнения ремонта остается на высшем уровне.
+                    Предлагаем нашим заказчикам лучший по всему городу сервис обслуживания.
+                    <br><br>
+                    Уже приняли решение о ремонте ванной комнаты в Санкт-Петербурге? Звоните нам! Будем рады
+                    предоставить
+                    исчерпывающие ответы на все Ваши вопросы.</span>
             </p>
             <img src="../../assets/img/mark.webp" className="description__img" alt="">
         </div>
@@ -1244,8 +1253,52 @@
 
 
 
+        <div className="testimonails">
+            <div className="block__title">
+                <p className="block__title-text">
+                    Отзывы
+                </p>
+                <div className="block__title-line"></div>
+            </div>
 
 
+            <div :style="{ transform: `translateX(-${rotateTestimonails}%)` }" class="testimonails__wrapper">
+
+                <div @click="openModal(el.text, el.name)" className="testimonails__item" ref="testimonialItems"
+                    v-for="(el, index) in feedbackData" :key="index">
+
+
+                    <div class="testimonails__item-container">
+                        <img :src="el.path" className="testimonails__item-img" alt="">
+                        <div className="testimonails__item-name">{{ el.name }}</div>
+                    </div>
+
+
+
+
+
+                </div>
+
+
+
+
+            </div>
+        </div>
+
+
+        <div @click="isTestimonailsModal.open = false" class="testimonails__modal" v-show="isTestimonailsModal.open">
+            <div @click="$event.stopPropagation();" class="testimonails__modal-container">
+
+                <p class="testimonails__modal-name"> {{ isTestimonailsModal.name }}</p>
+
+                <p class="testimonails__modal-description "> "{{ isTestimonailsModal.text }}"</p>
+
+
+
+                <img src="../../assets/img/cross.svg" class="testimonails__img-close"
+                    @click="isTestimonailsModal.open = false" alt="">
+            </div>
+        </div>
 
 
 
@@ -1313,11 +1366,55 @@ export default {
             touchEndX: 0,
             isDescriptionSeen: true,
 
+            feedbackData: [
+                {
+                    name: "От Марии Романовны",
+                    path: 'src/assets/img/after1.webp',
+                    text: " Хочу выразить благодарность Виталию, за профессиональный ремонт ванной и туалета.Работа  выполнена качественна, аккуратно и красиво. В итоге у нас отремонтированный санузел, который приносит только положительные эмоции.Буду рекомендовать  своим знакомым, а вам успехов и процветания! Большое спасибо!"
+                },
+                {
+                    name: "От Николая Петровича",
+                    path: 'src/assets/img/after2.webp',
+                    text: "Даже о материалах беспокоиться не пришлось, все покупали сами и работу проводили без задержек. Виталий всегда советовал как лучше сделать и что лучше купить. Результат соответствовал моим ожиданиям, если в дальнейшем понадобится помощь в ремонте буду обращаться именно сюда. Отдельная благодарность каждому участнику приложившему руку к ремонту моего санузла! "
+                },
+
+                {
+                    name: "От Нины Семеновны",
+                    path: 'src/assets/img/after3.webp',
+                    text: "Ремонт не в тягость, а радость! Первый ремонт в моей жизни, когда придраться не к чему. Плюс с моей стороны полное доверие к Виталию. Ремонт в моих маленьких ванной и туалете сделан ИДЕАЛЬНО!Плиточные, сантехнические, электро-работы — все на высшем уровне! В туалете шкафчик сделан классный! Работы были выполнены раньше оговоренных сроков! Мусор после ремонта убран!"
+                },
+
+                {
+                    name: "От Анны Козловой",
+                    path: 'src/assets/img/after4.webp',
+                    text: "Хочу оставить не просто положительный отзыв о компании «МинскОтделка», а выразить огромную благодарность команде за их работу. Год после ремонта. А у нас ни разу не возникло чувство сожаления или недовольства проделанной работой. Очень рада, что именно «МинскОтделка» делали нам ремонт ванной комнаты и туалета."
+                },
+
+                {
+                    name: "От Дарьи Лапун",
+                    path: 'src/assets/img/after5.webp',
+                    text: "Работа была выполнена аккуратно и в оговоренные сроки. Виталий сам занимался закупкой и доставкой материалов. Хочется поблагодарить за то, что он не просто сделал то, о чем его просили, но также предлагал варианты, до которых сами мы бы не додумались, и подробно отвечал на многочисленные вопросы даже после окончания работы. Виталия сделал ремонт в нашей квартире на 10 из 10. Будем всем рекомендовать вас)"
+                },
+
+                {
+                    name: "От Валерии Головы",
+                    path: 'src/assets/img/after6.webp',
+                    text: "Договорились с Виталием  о встрече, он приехал в тот же день.За все время, пока я выбирала плитку, сантехнику и тд, и когда уже шел ремонт, Виталий всегда был на связи. Ни один мой вопрос, даже самый глупый, не остался не отвеченным. В квартире, в которой должен был проводиться ремонт, никто не живет, поэтому пока все закупалось, было бы немного проблематично каждый раз договариваться с курьерами, приезжать туда и ждать доставки. Виталий всё это взял на себя, мне не пришлось самостоятельно заказывать и договариваться о времени доставки, что для меня было очень важно и удобно."
+                },
+
+            ],
+            rotateTestimonails: 0,
+            isTestimonailsModal: {
+                open: false,
+                text: '',
+                name: '',
+            }
+
         };
     },
     computed: {
         slideContent() {
-            const slides = [1,2,3,4];
+            const slides = [0, 1, 2, 3];
             return slides
         }
     },
@@ -1326,12 +1423,14 @@ export default {
         window.addEventListener('resize', this.checkSize);
         window.addEventListener('resize', this.showDescription);
 
+
+
     },
     methods: {
         checkSize() {
             this.showMobilePortfolioText = innerWidth < 769
         },
-        showDescription(){
+        showDescription() {
             this.isDescriptionSeen = innerWidth >= 425
         },
         onTouchStart(event) {
@@ -1359,12 +1458,21 @@ export default {
 
 
         },
-        showLess(){
-            if(innerWidth <= 425){
-                this.isDescriptionSeen=false
+        showLess() {
+            if (innerWidth <= 425) {
+                this.isDescriptionSeen = false
             }
-        }
+        },
 
+        toRotateTestimonails(degreesAmount) {
+            this.rotateTestimonails = degreesAmount
+        },
+
+        openModal(text, name) {
+            this.isTestimonailsModal.open = true
+            this.isTestimonailsModal.name = name
+            this.isTestimonailsModal.text = text
+        }
 
 
 
@@ -1372,9 +1480,39 @@ export default {
     },
 
 
+    mounted() {
+        const testimonialItems = this.$refs.testimonialItems;
 
 
+
+
+
+
+        for (let i = 1; i < testimonialItems.length; i += 3) {
+            testimonialItems[i].classList.add('testimonails__item-big');
+            testimonialItems[i].innerHTML +=
+                '<img src="src/assets/img/arrow-feedback.png" class="testimonails__arrow-left"><img src="src/assets/img/arrow-feedback.png" class="testimonails__arrow-right">';
+
+            const arrowRight = testimonialItems[i].querySelector('.testimonails__arrow-right');
+            arrowRight.addEventListener('click', () => {
+                this.toRotateTestimonails(100);
+                event.stopPropagation();
+            });
+            const arrowLeft = testimonialItems[i].querySelector('.testimonails__arrow-left');
+            arrowLeft.addEventListener('click', () => {
+                event.stopPropagation();
+                this.toRotateTestimonails(0);
+
+            });
+        }
+
+
+
+
+    }
 }
+
+
 </script>
 
 
@@ -1388,21 +1526,189 @@ export default {
 @import "../../assets/fonts/fonts.css";
 @import "../../assets/main.css";
 
-.description__show-more{
+
+
+
+
+
+
+
+.testimonails {
+  padding: 100px 0;
+  width: 90%;
+  max-width: 1600px;
+  margin: 0 auto 0 auto;
+  position: relative;
+  overflow: hidden !important;
+  z-index: 1;
+
+}
+
+.testimonails__wrapper {
+  display: grid !important;
+  width: 100%;
+  grid-template-columns: repeat(6, 33%);
+  margin: 100px 0 0 0;
+  gap: 1%;
+  transition: ease-in-out 0.5s;
+}
+
+.testimonails__item-container{
+cursor: pointer;
+transition: 0.5s;
+}
+
+.testimonails__item-container:hover{
+  scale: 1.05;
+}
+.testimonails__item-big{
+  width: 100%;
+}
+
+.testimonails__item-img{
+margin: auto;
+display: block;
+width: 100%;
+height: 346px;
+object-fit: cover;
+object-position: top;
+border-radius: 45px 45px 0 0;
+}
+
+.testimonails__item-big .testimonails__item-img{
+  height: 450px;
+  width: 100%;
+}
+
+.testimonails__item-name{
+  background: #D3B99F;
+padding: 30px;
+width: 100%;
+border-radius: 0 0 20px 20px;
+
+font-family: 'lato',sans-serif;
+font-size: 23px;
+font-weight: 500;
+line-height: 34.5px;
+letter-spacing: 0.01em;
+text-align: center;
+color: #FFFFFF;
+
+}
+
+
+
+.testimonails__arrow-left{
+cursor: pointer;
+order: 0;
+}
+
+.testimonails__arrow-right{
+transform: rotate(180deg);
+order: 3;
+justify-self: end;
+cursor: pointer;
+}
+
+.testimonails__item{
+    margin: auto;
+  width: 80%;
+  position: relative;
+  z-index: 0;
+  display: flex;
+  align-items: center;
+align-items: center;
+
+margin: auto;
+justify-content: center;
+
+  gap: 20px;
+}
+
+.testimonails__item-big{
+  width: 100%;
+}
+
+.testimonails__item-container{
+  order: 2;
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+}
+
+
+
+.testimonails__modal{
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+bottom: 0;
+right: 0;
+left: 0;
+  background-color: rgba(0, 0, 0, 0.419);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.testimonails__modal-container{
+  width: 90%;
+  max-width: 500px;
+
+  background: #F6EDE3;
+border-radius: 16px;
+padding: 40px;
+position: relative;
+
+}
+.testimonails__modal-description{
+  font-family: "lato", sans-serif;
+font-size: 20px;
+font-weight: 400;
+line-height: 30px;
+letter-spacing: 0.04em;
+text-align: left;
+
+}
+
+.testimonails__modal-name{
+  font-family: 'garamond', sans-serif;
+margin: 0 0 20px 0;
+font-size: 40px;
+font-weight: 400;
+line-height: 40px;
+text-align: left;
+
+}
+.testimonails__img-close{
+  position: absolute;
+  width: 20px;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+
+
+
+.description__show-more {
     background: none;
     border: none;
 }
 
 .prices__pagination {
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
-  gap:6px;
-  width: fit-content;
-  margin: 20px auto 0 auto;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    gap: 6px;
+    width: fit-content;
+    margin: 20px auto 0 auto;
 }
 
-.prices__pagination  span {
+.prices__pagination span {
     background: #FCEAD9;
     height: 8px;
     width: 8px;
@@ -2137,7 +2443,7 @@ export default {
 
 .call__button {
     border-radius: 15px;
-    margin:0;
+    margin: 0;
 }
 
 .call__button-light {
@@ -2163,6 +2469,22 @@ export default {
 
 @media(max-width:769px) {
 
+
+    
+.testimonails__wrapper{
+    display: grid !important;
+        overflow: hidden !important;
+        width: 600%;
+        grid-template-columns: repeat(6, 15%);
+        gap:0
+}
+
+.testimonails__item{
+    width: 100%;
+}
+.testimonails__item-container{
+    width: 100%;
+}
 
 
 
@@ -2295,38 +2617,40 @@ export default {
     }
 
     .prices__container {
-    overflow: hidden;
-    width: 90%;
-    max-width: 1200px;
-    margin: auto;
-}
+        overflow: hidden;
+        width: 90%;
+        max-width: 1200px;
+        margin: auto;
+    }
 
-.slider {
-    display: grid !important;
-    overflow: hidden !important;
-    width: 400%; /* изменено */
-    grid-template-columns: repeat(4, 25%); /* изменено */
+    .slider {
+        display: grid !important;
+        overflow: hidden !important;
+        width: 400%;
+        /* изменено */
+        grid-template-columns: repeat(4, 25%);
+        /* изменено */
 
-}
+    }
 
-.slide {
-    flex: 1 !important;
-    height: 100%;
-    width: 100% !important;
-    transition: transform 0.5s !important;
-}
+    .slide {
+        flex: 1 !important;
+        height: 100%;
+        width: 100% !important;
+        transition: transform 0.5s !important;
+    }
 
-.prices__wrapper-desctop {
-    display: none;
-}
+    .prices__wrapper-desctop {
+        display: none;
+    }
 
-.prices__slider {
-    display: flex;
-}
+    .prices__slider {
+        display: flex;
+    }
 
-.slider {
-    display: flex;
-}
+    .slider {
+        display: flex;
+    }
 
 
 }
@@ -2479,56 +2803,61 @@ export default {
     .portfolio__item {
         padding: 40px 10px;
     }
-    .block__title-text{
-font-size: 25px;
-font-weight: 400;
-line-height: 25px;
+
+    .block__title-text {
+        font-size: 25px;
+        font-weight: 400;
+        line-height: 25px;
 
 
     }
 
-    .slider{
-        margin:20px 0 0 0 
+    .slider {
+        margin: 20px 0 0 0
     }
-    
-    .call__title-text{
+
+    .call__title-text {
         text-align: center;
-font-size: 24px;
-font-weight: 400;
-line-height: 24px;
-
-    }
-    .prices__item-table-title{
-font-size: 24px;
-font-weight: 400;
-line-height: 24px;
-text-align: left;
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 24px;
 
     }
 
-    .prices__item-table-name{
-font-size: 13px;
-font-weight: 400;
-line-height: 19.5px;
-letter-spacing: 0.01em;
+    .prices__item-table-title {
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 24px;
+        text-align: left;
 
     }
-    .prices__item-table-price{
-font-size: 13px;
-font-weight: 600;
-line-height: 19.5px;
-letter-spacing: 0.01em;
+
+    .prices__item-table-name {
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 19.5px;
+        letter-spacing: 0.01em;
 
     }
-    .description__text{
-font-size: 13px;
-font-weight: 400;
-line-height: 19.5px;
-letter-spacing: 0.03em;
-text-align: left;
+
+    .prices__item-table-price {
+        font-size: 13px;
+        font-weight: 600;
+        line-height: 19.5px;
+        letter-spacing: 0.01em;
 
     }
-    .description__img{
+
+    .description__text {
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 19.5px;
+        letter-spacing: 0.03em;
+        text-align: left;
+
+    }
+
+    .description__img {
         display: none;
     }
 }

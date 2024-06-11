@@ -15,7 +15,7 @@
 
             <div className="header__links">
                 <router-link className="header__route" to="/">Главная</router-link>
-                <router-link className="header__route" to="/prices">Цены</router-link>
+                <a href="#prices" className="header__route" >Цены</a>
                 <router-link className="header__route" to="/calculator">Калькулятор ремонта</router-link>
                 <router-link className="header__route" to="/examples">Примеры работ</router-link>
                 <router-link className="header__route" to="/news">Новости</router-link>

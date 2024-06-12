@@ -844,5 +844,20 @@ export default {
   .calculator__square-input {
     max-width: 149px;
   }
+  .calculator__form-title {
+        font-size: 25px;
+        line-height: 25px;
+        margin-bottom: 14px;
+
+    }
+
+
+    .calculator__form-prev{
+font-size: 13px;
+font-weight: 400;
+line-height: 19.5px;
+letter-spacing: 0.01em;
+
+    }
 }
 </style>

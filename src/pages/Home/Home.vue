@@ -1188,9 +1188,11 @@
 
 
                     <div className="prices__pagination">
-                        <span v-for=" index in slideContent" :key="index"
-                            :className="{ 'active': currentSlide === index }" @click="currentSlide = index"></span>
+                        <span v-for=" index in slideContent" :key="index" :class="{ 'active': currentSlide === index }"
+                            @click="currentSlide = index"></span>
                     </div>
+
+
 
                 </div>
             </div>
@@ -1261,8 +1263,14 @@
                 <div className="block__title-line"></div>
             </div>
 
+            <img v-show="showMobileArrows" @click="toRotateTestimonails(-100)" src="../../assets/img/arrow-feedback.png"
+                className="testimonails__arrow-left active" alt="">
 
-            <div :style="{ transform: `translateX(-${rotateTestimonails}%)` }" class="testimonails__wrapper">
+
+            <div :style="{ transform: `translateX(${rotateTestimonails}%)` }" class="testimonails__wrapper">
+
+
+
 
                 <div @click="openModal(el.text, el.name)" className="testimonails__item" ref="testimonialItems"
                     v-for="(el, index) in feedbackData" :key="index">
@@ -1281,8 +1289,20 @@
 
 
 
+            </div>
+            <img v-show="showMobileArrows" src="../../assets/img/arrow-feedback.png" @click="toRotateTestimonails(100)"
+                className="testimonails__arrow-right active" alt="">
+
+
+
+
+            <div className="testimonails__pagination">
+                <span v-for=" (item, index) in feedbackData" :key="index"
+                    :class="{ 'active': rotateTestimonails === index * -100 }"
+                    @click="rotateTestimonails = index * -100"></span>
 
             </div>
+
         </div>
 
 
@@ -1364,7 +1384,7 @@ export default {
             currentSlide: 0,
             touchStartX: 0,
             touchEndX: 0,
-            isDescriptionSeen: true,
+            isDescriptionSeen: innerWidth >= 425,
 
             feedbackData: [
                 {
@@ -1408,7 +1428,8 @@ export default {
                 open: false,
                 text: '',
                 name: '',
-            }
+            },
+            showMobileArrows: innerWidth < 769,
 
         };
     },
@@ -1422,7 +1443,7 @@ export default {
         this.checkSize();
         window.addEventListener('resize', this.checkSize);
         window.addEventListener('resize', this.showDescription);
-
+        window.addEventListener('resize', this.showMobileArrowsMeth)
 
 
     },
@@ -1451,7 +1472,7 @@ export default {
             if (this.currentSlide >= 4) {
                 this.currentSlide = 0;
             }
-            if (this.currentSlide <= 0 && diffX > 0) {
+            if (this.currentSlide < 0 && diffX > 0) {
                 this.currentSlide = 3
             }
 
@@ -1462,10 +1483,46 @@ export default {
             if (innerWidth <= 425) {
                 this.isDescriptionSeen = false
             }
+
+
+        },
+
+        showMobileArrowsMeth() {
+
+
+            this.showMobileArrows = innerWidth < 769
+
+            console.log(innerWidth, this.showMobileArrows)
         },
 
         toRotateTestimonails(degreesAmount) {
-            this.rotateTestimonails = degreesAmount
+            console.log(this.rotateTestimonails, degreesAmount)
+            if (!this.showMobileArrows && this.rotateTestimonails === 0 && degreesAmount > 1) {
+
+                console.log('hi', Math.sign(degreesAmount))
+
+                return
+
+            }
+
+            if (!this.showMobileArrows && this.rotateTestimonails === -100 && degreesAmount === -100) {
+                console.log('ho', Math.sign(degreesAmount), this.showMobileArrows)
+                return
+
+            } if (this.rotateTestimonails === -500 && degreesAmount === -100) {
+                this.rotateTestimonails = 0
+                return
+            }
+            if (this.rotateTestimonails === 0 && degreesAmount === 100) {
+                this.rotateTestimonails = -500
+                return
+            }
+
+
+
+            this.rotateTestimonails += degreesAmount
+            console.log(this.rotateTestimonails)
+
         },
 
         openModal(text, name) {
@@ -1495,13 +1552,13 @@ export default {
 
             const arrowRight = testimonialItems[i].querySelector('.testimonails__arrow-right');
             arrowRight.addEventListener('click', () => {
-                this.toRotateTestimonails(100);
+                this.toRotateTestimonails(-100);
                 event.stopPropagation();
             });
             const arrowLeft = testimonialItems[i].querySelector('.testimonails__arrow-left');
             arrowLeft.addEventListener('click', () => {
                 event.stopPropagation();
-                this.toRotateTestimonails(0);
+                this.toRotateTestimonails(100);
 
             });
         }
@@ -1534,161 +1591,155 @@ export default {
 
 
 .testimonails {
-  padding: 100px 0;
-  width: 90%;
-  max-width: 1600px;
-  margin: 0 auto 0 auto;
-  position: relative;
-  overflow: hidden !important;
-  z-index: 1;
+    padding: 100px 0;
+    width: 90%;
+    max-width: 1600px;
+    margin: 0 auto 0 auto;
+    position: relative;
+    overflow: hidden !important;
+    z-index: 1;
 
 }
 
 .testimonails__wrapper {
-  display: grid !important;
-  width: 100%;
-  grid-template-columns: repeat(6, 33%);
-  margin: 100px 0 0 0;
-  gap: 1%;
-  transition: ease-in-out 0.5s;
+    display: grid !important;
+    width: 100%;
+    grid-template-columns: repeat(6, 33%);
+    margin: 100px 0 0 0;
+    gap: 1%;
+    transition: ease-in-out 0.5s;
 }
 
-.testimonails__item-container{
-cursor: pointer;
-transition: 0.5s;
+.testimonails__item-container {
+    cursor: pointer;
+    transition: 0.5s;
 }
 
-.testimonails__item-container:hover{
-  scale: 1.05;
-}
-.testimonails__item-big{
-  width: 100%;
+.testimonails__item-container:hover {
+    scale: 1.05;
 }
 
-.testimonails__item-img{
-margin: auto;
-display: block;
-width: 100%;
-height: 346px;
-object-fit: cover;
-object-position: top;
-border-radius: 45px 45px 0 0;
+.testimonails__item-big {
+    width: 100%;
 }
 
-.testimonails__item-big .testimonails__item-img{
-  height: 450px;
-  width: 100%;
-}
-
-.testimonails__item-name{
-  background: #D3B99F;
-padding: 30px;
-width: 100%;
-border-radius: 0 0 20px 20px;
-
-font-family: 'lato',sans-serif;
-font-size: 23px;
-font-weight: 500;
-line-height: 34.5px;
-letter-spacing: 0.01em;
-text-align: center;
-color: #FFFFFF;
-
-}
-
-
-
-.testimonails__arrow-left{
-cursor: pointer;
-order: 0;
-}
-
-.testimonails__arrow-right{
-transform: rotate(180deg);
-order: 3;
-justify-self: end;
-cursor: pointer;
-}
-
-.testimonails__item{
+.testimonails__item-img {
     margin: auto;
-  width: 80%;
-  position: relative;
-  z-index: 0;
-  display: flex;
-  align-items: center;
-align-items: center;
-
-margin: auto;
-justify-content: center;
-
-  gap: 20px;
+    display: block;
+    width: 100%;
+    height: 346px;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 76px 76px 0 0;
 }
 
-.testimonails__item-big{
-  width: 100%;
+.testimonails__item-big .testimonails__item-img {
+    height: 450px;
+    width: 100%;
 }
 
-.testimonails__item-container{
-  order: 2;
-  position: relative;
-  z-index: 2;
+.testimonails__item-name {
+    background: #D3B99F;
+    padding: 30px;
+    width: 100%;
+    border-radius: 0 0 20px 20px;
 
-  width: 100%;
-}
-
-
-
-.testimonails__modal{
-  position: fixed;
-  height: 100%;
-  width: 100%;
-  top: 0;
-bottom: 0;
-right: 0;
-left: 0;
-  background-color: rgba(0, 0, 0, 0.419);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 2;
-}
-
-.testimonails__modal-container{
-  width: 90%;
-  max-width: 500px;
-
-  background: #F6EDE3;
-border-radius: 16px;
-padding: 40px;
-position: relative;
-
-}
-.testimonails__modal-description{
-  font-family: "lato", sans-serif;
-font-size: 20px;
-font-weight: 400;
-line-height: 30px;
-letter-spacing: 0.04em;
-text-align: left;
+    font-family: 'lato', sans-serif;
+    font-size: 23px;
+    font-weight: 500;
+    line-height: 34.5px;
+    letter-spacing: 0.01em;
+    text-align: center;
+    color: #FFFFFF;
 
 }
 
-.testimonails__modal-name{
-  font-family: 'garamond', sans-serif;
-margin: 0 0 20px 0;
-font-size: 40px;
-font-weight: 400;
-line-height: 40px;
-text-align: left;
+.testimonails__pagination {
+    display: none;
+}
+
+
+.testimonails__item {
+    margin: auto;
+    width: 80%;
+    position: relative;
+    z-index: 0;
+    display: flex;
+    align-items: center;
+    align-items: center;
+
+    margin: auto;
+    justify-content: center;
+
+    gap: 20px;
+}
+
+.testimonails__item-big {
+    width: 100%;
+}
+
+.testimonails__item-container {
+    order: 2;
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+}
+
+
+
+.testimonails__modal {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.419);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.testimonails__modal-container {
+    width: 90%;
+    max-width: 500px;
+
+    background: #F6EDE3;
+    border-radius: 16px;
+    padding: 40px;
+    position: relative;
 
 }
-.testimonails__img-close{
-  position: absolute;
-  width: 20px;
-  top: 10px;
-  right: 10px;
-  cursor: pointer;
+
+.testimonails__modal-description {
+    font-family: "lato", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: 0.04em;
+    text-align: left;
+
+}
+
+.testimonails__modal-name {
+    font-family: 'garamond', sans-serif;
+    margin: 0 0 20px 0;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 40px;
+    text-align: left;
+
+}
+
+.testimonails__img-close {
+    position: absolute;
+    width: 20px;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
 }
 
 
@@ -2467,25 +2518,60 @@ text-align: left;
     z-index: 1;
 }
 
+
+
+
+@media(max-width:1024px) {
+    .testimonails__item-img {
+        height: 146px;
+    }
+
+    .testimonails__item-big,
+    .testimonails__item-img {
+        height: 239px !important;
+    }
+
+    .testimonails__item-name {
+        padding: 10px;
+        font-size: 18px;
+        line-height: normal;
+    }
+
+}
+
+
+
 @media(max-width:769px) {
 
 
-    
-.testimonails__wrapper{
-    display: grid !important;
-        overflow: hidden !important;
-        width: 600%;
-        grid-template-columns: repeat(6, 15%);
-        gap:0
-}
 
-.testimonails__item{
-    width: 100%;
-}
-.testimonails__item-container{
-    width: 100%;
-}
 
+    .testimonails__item {
+        width: 100%;
+    }
+
+    .testimonails__wrapper {
+        display: grid !important;
+        width: 100% !important;
+        grid-template-columns: repeat(6, 100%);
+        gap: 0 !important;
+    }
+
+    .testimonails__item {
+        width: 90%;
+        margin: auto;
+    }
+
+    .testimonails__item-container {
+        width: 100%;
+    }
+
+
+
+    .testimonails__item-big,
+    .testimonails__item-img {
+        height: 300px !important;
+    }
 
 
     .count-form__img {
@@ -2494,6 +2580,10 @@ text-align: left;
 
     .count-form {
         width: 100%;
+    }
+
+    .testimonails__pagination {
+        display: flex;
     }
 
     .count-form__block-title {
@@ -2652,12 +2742,81 @@ text-align: left;
         display: flex;
     }
 
+    .call__wrapper {
+        justify-content: center;
+    }
 
 }
 
 
 
 @media(max-width:426px) {
+
+
+    .testimonails__modal-container {
+        padding: 20px;
+    }
+
+    .testimonails__modal-name {
+        font-size: 26px;
+        line-height: normal;
+    }
+
+    .testimonails__modal-description {
+        font-size: 14px;
+        line-height: normal;
+
+    }
+
+    .testimonails__item-container {
+        width: 88%;
+    }
+
+
+    .call {
+        background: #F6EDE3;
+
+        width: 100%;
+        padding: 42px 13px;
+        border-radius: 0;
+        margin: 0 auto 80px auto;
+    }
+
+    .testimonails__wrapper {
+        margin: 50px auto 0px auto;
+    }
+
+    .testimonails__item-big,
+    .testimonails__item-img {
+
+        height: 180.14px !important;
+
+
+    }
+
+    .testimonails__arrow-left.active,
+    .testimonails__arrow-right.active {
+        bottom: 215px;
+    }
+
+    .testimonails {
+        padding: 80px 0
+    }
+
+    .prices {
+        padding: 80px 0;
+    }
+
+    .prices__item-table-name {
+        width: 60%;
+        padding: 10px 10px 10px 0;
+    }
+
+    .prices__back {
+        max-width: 122px;
+    }
+
+
 
     .main__offer-text {
         font-size: 20px;
@@ -2815,6 +2974,7 @@ text-align: left;
     .slider {
         margin: 20px 0 0 0
     }
+
 
     .call__title-text {
         text-align: center;

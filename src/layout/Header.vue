@@ -4,14 +4,12 @@
 
         <div className="header__container">
             <router-link className=" header__logo" to="/">
-                <!-- <div className="header__logo"> -->
                 <img :src="logo" alt="logo" className="header__logo-img">
                 <div className="header__logo-text">
                     <p className="header__logo-name">artistic</p>
                     <p className="header__logo-description">Ремонт ванных комнат</p>
                 </div>
             </router-link>
-            <!-- </div> -->
 
             <div className="header__links">
                 <router-link className="header__route" to="/">Главная</router-link>

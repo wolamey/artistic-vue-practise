@@ -803,6 +803,15 @@ export default {
 }
 
 @media(max-width: 426px) {
+
+
+  .calculator__square-wrapper{
+    gap: 6px;
+  }
+  .calculator__services-wrapper{
+    grid-template-columns: auto;
+    width: 100%;
+  }
   .block__title-text {
     font-size: 25px;
     font-weight: 400;

@@ -35,7 +35,7 @@
                     className="header__burger-close-button-img" alt=""></button>
 
             <router-link @click="setBurgerStatus(false)" className="header__route" to="/">Главная</router-link>
-            <router-link @click="setBurgerStatus(false)" className="header__route" to="/prices">Цены</router-link>
+            <a @click="setBurgerStatus(false)" className="header__route" href="#prices">Цены</a>
             <router-link @click="setBurgerStatus(false)" className="header__route" to="/calculator">Калькулятор ремонта</router-link>
             <router-link @click="setBurgerStatus(false)" className="header__route" to="/examples">Примеры работ</router-link>
             <router-link @click="setBurgerStatus(false)" className="header__route" to="/news">Новости</router-link>
@@ -206,12 +206,15 @@ export default {
     width: 100%;
     top: 0;
     height: 100vh;
-    background: #CBB097E8;
+    background: #bca894c0;
+
     padding: 33px 15px 0 0;
     display: flex;
     flex-direction: column;
     align-items: end;
     gap: 23px;
+
+    z-index: 5;
 
 }
 .header__burger-close-button{
@@ -221,8 +224,13 @@ export default {
 }
 
 @media(max-width: 769px) {
+    .header{
+        background: #BAA792;
 
-
+    }
+    .header__container a{
+    gap: 5px;
+}
     .header__logo-img {
         max-width: 30px;
     }
@@ -251,6 +259,7 @@ export default {
     .header__mobile {
         display: flex;
         gap: 8px;
+        
         align-items: center;
     }
 

@@ -72,7 +72,7 @@
             </div>
 
 
-            <a href="" className="why-us__link">
+            <a href="#homeForm" className="why-us__link">
                 <p className="why-us__link-text">Оставить заявку</p>
                 <img src="../../assets/img/arrow.webp" className="why-us__arrow-img" alt="">
             </a>
@@ -89,7 +89,7 @@
 
 
 
-        <div className="count-form">
+        <div id="homeForm" className="count-form">
             <div className="block__title count-form__block-title">
                 <p className="block__title-text count-form__title-text">
                     Расчитайте стоимость ремонта санузла быстро
@@ -105,24 +105,33 @@
 
                     <div className="count-form__input-block">
                         <p className="count-form__pre-input">Площадь санузла</p>
-                        <input type="number" className="count-form__input" placeholder="м2" required>
+                        <input v-model="formSque" type="number" className="count-form__input" placeholder="м2" required>
                     </div>
                     <div className="count-form__input-block">
                         <p className="count-form__pre-input">Имя</p>
-                        <input type="text" className="count-form__input" placeholder="Ваше имя     " required>
+                        <input @paste="$event.preventDefault()" v-model="formName" @keypress="noDigits($event)"
+                            type="text" className="count-form__input" placeholder="Ваше имя     " required>
                     </div>
 
                     <div className="count-form__input-block">
                         <p className="count-form__pre-input">Телефон</p>
-                        <input type="tel" className="count-form__input" placeholder="+ 7(___)___-__-__ " required>
+                        <input v-model="formNumberTel" type="tel" className="count-form__input"
+                            placeholder="+ 7(___)___-__-__ " required>
                     </div>
 
-                    <input type="submit" className="count-form__submit button" value="Рассчитать стоимость">
+                    <input type="button" @click="formSubmit()" className="count-form__submit button"
+                        value="Рассчитать стоимость">
                 </form>
             </div>
         </div>
+        <div className="form__error" v-show="error !== ''">
 
+        <div class="form__error-container">
+            {{ error }}
 
+            <button class="form__error-close-button button" @click="error = ''">Ок</button>
+        </div>
+    </div>
 
 
         <div className="specializations">
@@ -329,7 +338,7 @@
                             </a>
                         </div>
 
-                        <a href="" className="button portfolio__button"> Подробнее</a>
+                        <router-link to="/examples" href="" className="button portfolio__button"> Подробнее</router-link>
                     </div>
                 </div>
 
@@ -418,7 +427,7 @@
                             </a>
                         </div>
 
-                        <a href="" className="button portfolio__button"> Подробнее</a>
+                        <router-link to="/examples" href="" className="button portfolio__button"> Подробнее</router-link>
                     </div>
                 </div>
 
@@ -505,7 +514,7 @@
                             </a>
                         </div>
 
-                        <a href="" className="button portfolio__button"> Подробнее</a>
+                        <router-link to="/examples" href="" className="button portfolio__button"> Подробнее</router-link>
                     </div>
                 </div>
 
@@ -593,7 +602,7 @@
                             </a>
                         </div>
 
-                        <a href="" className="button portfolio__button"> Подробнее</a>
+                        <router-link to="/examples" href="" className="button portfolio__button"> Подробнее</router-link>
                     </div>
                 </div>
 
@@ -681,7 +690,7 @@
                             </a>
                         </div>
 
-                        <a href="" className="button portfolio__button"> Подробнее</a>
+                        <router-link to="/examples" href="" className="button portfolio__button"> Подробнее</router-link>
                     </div>
                 </div>
 
@@ -768,7 +777,7 @@
                             </a>
                         </div>
 
-                        <a href="" className="button portfolio__button"> Подробнее</a>
+                        <router-link to="/examples" href="" className="button portfolio__button"> Подробнее</router-link>
                     </div>
                 </div>
 
@@ -1341,7 +1350,7 @@
 
                 </a>
 
-                <a href="#" className="call__button-light">Ваш номер телефона</a>
+                <a href="#homeForm" className="call__button-light">Ваш номер телефона</a>
                 <a href="contact.html" className="button call__button">Вызвать замерщика</a>
             </div>
         </div>
@@ -1430,7 +1439,12 @@ export default {
                 name: '',
             },
             showMobileArrows: innerWidth < 769,
+            telRegex: /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/,
+            formName: '',
+            formNumberTel: '',
+            formSque: '',
 
+            error: '',
         };
     },
     computed: {
@@ -1530,7 +1544,21 @@ export default {
             this.isTestimonailsModal.name = name
             this.isTestimonailsModal.text = text
         }
+        ,
+        formSubmit() {
+            if (this.formName === '' || this.formNumberTel === '' || this.formSque === '') {
+                this.error= 'Введите все данные'
+                return
+            }
+            if(!this.telRegex.test(this.formNumberTel)){
+                this.error= 'Введите корректный номер телефона'
+                return
 
+            }
+            this.error= 'Спасибо за заполнение формы, мы свяжемся  с вами скоро!'
+
+
+        }
 
 
 
@@ -1656,6 +1684,18 @@ export default {
 
 .testimonails__pagination {
     display: none;
+}
+
+.count-form__pre-input {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: 0.01em;
+
+}
+
+.count-form__input {
+    width: 100%;
 }
 
 
@@ -2539,6 +2579,44 @@ export default {
 
 }
 
+
+.form__error-container {
+  padding: 30px;
+  background: #d0b194;
+  font-family: "lato", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.01em;
+  text-align: center;
+  color: #ffffff;
+}
+
+.form__error-close-button {
+  border-radius: 10px;
+  margin: 20px auto 0 auto;
+}
+
+
+.form__error {
+
+
+  transition: 0.3s;
+
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #00000028;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+  z-index: 5;
+
+}
 
 
 @media(max-width:769px) {

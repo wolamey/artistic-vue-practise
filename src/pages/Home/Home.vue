@@ -126,12 +126,12 @@
         </div>
         <div className="form__error" v-show="error !== ''">
 
-        <div class="form__error-container">
-            {{ error }}
+            <div class="form__error-container">
+                {{ error }}
 
-            <button class="form__error-close-button button" @click="error = ''">Ок</button>
+                <button class="form__error-close-button button" @click="error = ''">Ок</button>
+            </div>
         </div>
-    </div>
 
 
         <div className="specializations">
@@ -338,7 +338,8 @@
                             </a>
                         </div>
 
-                        <router-link to="/examples" href="" className="button portfolio__button"> Подробнее</router-link>
+                        <router-link to="/examples" href="" className="button portfolio__button">
+                            Подробнее</router-link>
                     </div>
                 </div>
 
@@ -427,7 +428,8 @@
                             </a>
                         </div>
 
-                        <router-link to="/examples" href="" className="button portfolio__button"> Подробнее</router-link>
+                        <router-link to="/examples" href="" className="button portfolio__button">
+                            Подробнее</router-link>
                     </div>
                 </div>
 
@@ -514,7 +516,8 @@
                             </a>
                         </div>
 
-                        <router-link to="/examples" href="" className="button portfolio__button"> Подробнее</router-link>
+                        <router-link to="/examples" href="" className="button portfolio__button">
+                            Подробнее</router-link>
                     </div>
                 </div>
 
@@ -602,7 +605,8 @@
                             </a>
                         </div>
 
-                        <router-link to="/examples" href="" className="button portfolio__button"> Подробнее</router-link>
+                        <router-link to="/examples" href="" className="button portfolio__button">
+                            Подробнее</router-link>
                     </div>
                 </div>
 
@@ -690,7 +694,8 @@
                             </a>
                         </div>
 
-                        <router-link to="/examples" href="" className="button portfolio__button"> Подробнее</router-link>
+                        <router-link to="/examples" href="" className="button portfolio__button">
+                            Подробнее</router-link>
                     </div>
                 </div>
 
@@ -777,7 +782,8 @@
                             </a>
                         </div>
 
-                        <router-link to="/examples" href="" className="button portfolio__button"> Подробнее</router-link>
+                        <router-link to="/examples" href="" className="button portfolio__button">
+                            Подробнее</router-link>
                     </div>
                 </div>
 
@@ -1506,21 +1512,17 @@ export default {
 
             this.showMobileArrows = innerWidth < 769
 
-            console.log(innerWidth, this.showMobileArrows)
         },
 
         toRotateTestimonails(degreesAmount) {
-            console.log(this.rotateTestimonails, degreesAmount)
             if (!this.showMobileArrows && this.rotateTestimonails === 0 && degreesAmount > 1) {
 
-                console.log('hi', Math.sign(degreesAmount))
 
                 return
 
             }
 
             if (!this.showMobileArrows && this.rotateTestimonails === -100 && degreesAmount === -100) {
-                console.log('ho', Math.sign(degreesAmount), this.showMobileArrows)
                 return
 
             } if (this.rotateTestimonails === -500 && degreesAmount === -100) {
@@ -1535,7 +1537,6 @@ export default {
 
 
             this.rotateTestimonails += degreesAmount
-            console.log(this.rotateTestimonails)
 
         },
 
@@ -1547,18 +1548,23 @@ export default {
         ,
         formSubmit() {
             if (this.formName === '' || this.formNumberTel === '' || this.formSque === '') {
-                this.error= 'Введите все данные'
+                this.error = 'Введите все данные'
                 return
             }
-            if(!this.telRegex.test(this.formNumberTel)){
-                this.error= 'Введите корректный номер телефона'
+            if (!this.telRegex.test(this.formNumberTel)) {
+                this.error = 'Введите корректный номер телефона'
                 return
 
             }
-            this.error= 'Спасибо за заполнение формы, мы свяжемся  с вами скоро!'
+            this.error = 'Спасибо за заполнение формы, мы свяжемся  с вами скоро!'
 
 
+        },
+        noDigits(event) {
+            if ("1234567890".indexOf(event.key) != -1)
+                event.preventDefault();
         }
+
 
 
 
@@ -2581,40 +2587,40 @@ export default {
 
 
 .form__error-container {
-  padding: 30px;
-  background: #d0b194;
-  font-family: "lato", sans-serif;
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 24px;
-  letter-spacing: 0.01em;
-  text-align: center;
-  color: #ffffff;
+    padding: 30px;
+    background: #d0b194;
+    font-family: "lato", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.01em;
+    text-align: center;
+    color: #ffffff;
 }
 
 .form__error-close-button {
-  border-radius: 10px;
-  margin: 20px auto 0 auto;
+    border-radius: 10px;
+    margin: 20px auto 0 auto;
 }
 
 
 .form__error {
 
 
-  transition: 0.3s;
+    transition: 0.3s;
 
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: #00000028;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #00000028;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
 
-  z-index: 5;
+    z-index: 5;
 
 }
 

@@ -36,7 +36,7 @@
                 <p className="footer__column-name">пОМОЩЬ</p>
                 <a href="" className="footer__link">ЦЕНЫ </a>
                 <a href="" className="footer__link">БЕСПЛАТНЫЙ ЗАМЕР</a>
-                <a href="" className="footer__link">КОНТАКТЫ</a>
+                <router-link to="/contacts" href="" className="footer__link">КОНТАКТЫ</router-link>
 
             </div>
 
